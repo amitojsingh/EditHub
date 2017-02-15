@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214074659) do
+ActiveRecord::Schema.define(version: 20170214114212) do
 
   create_table "repositories", force: :cascade do |t|
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "zip_upload_file_name"
-    t.string   "zip_upload_content_type"
-    t.integer  "zip_upload_file_size"
-    t.datetime "zip_upload_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
   end
 
 end

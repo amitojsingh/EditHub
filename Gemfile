@@ -34,8 +34,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-#
+# Use paperclip to attach files
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+# Use rubyzip to read zip files
+gem 'rubyzip','>=1.0.0'
+gem 'zip-zip'
+
 
 group :development, :test do
   gem 'capybara', '2.7.1'

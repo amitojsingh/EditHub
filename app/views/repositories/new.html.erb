@@ -1,5 +1,5 @@
 <h1>Repositories#new</h1>
-<%= form_for @repository do |f|%>
-<%= f.file_field :zip_upload,name: "upload" %>
-<%= f.submit %>
+<%= form_for @repository,  html: { multipart: true } do |form| %>
+<%= form.file_field :upload, name: "upload" %>
+<%= form.submit %>
 <%end%>
