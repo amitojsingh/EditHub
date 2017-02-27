@@ -14,7 +14,7 @@
           Zip::File.open("#{@repository.upload.path}") do |file|
 
               file.each do |entry|
-                entry_path=Rails.root.join("public/system/repositories/uploads/extract", entry.name)
+                entry_path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}", entry.name)
                         FileUtils.mkdir_p(File.dirname(entry_path))
                         entry.extract(entry_path) unless File.exist?(entry_path)
                       end
@@ -29,11 +29,11 @@
       def show
         @repository=Repository.find(params[:id])
         @folder=File.basename("#{@repository.upload_file_name}",".zip")
-        path=Rails.root.join("public/system/repositories/uploads/extract" ,@folder)
-          @files=Hash.new
-        Dir.entries("#{path}").each do |entries|
-          @files[entries]=path/entries
-        end
+        path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
+        @files=Hash.new
+          Dir.entries("#{path}").each do |entries|
+            @files[entries]=path/entries
+          end
         #Dir.chdir("public/system/repositories/uploads/extract/#{@folder}")
 
       end

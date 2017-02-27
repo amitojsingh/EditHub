@@ -1,5 +1,10 @@
 <P> aah chko </p>
 <%= @files.each do |key,value|%>
 <%=link_to key%>
-<%=value%>
 <%end%>
+
+<div id="editor">some text</div>
+ <!--<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>-->
+        <script>
+        var editor = ace.edit("editor");
+	    </script>

@@ -40,6 +40,9 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'rubyzip','>=1.0.0'
 gem 'zip-zip'
 
+# Use for the editor ace
+gem 'ace-rails-ap'
+
 
 group :development, :test do
   gem 'capybara', '2.7.1'
