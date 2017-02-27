@@ -1,8 +1,20 @@
 <P> aah chko </p>
 <%= @files.each do |key,value|%>
-<%=link_to key%>
+<%=check_box_tag(key)%>
+<%=label_tag(key,key,checked_value=value)%>
+<br>
 <%end%>
-
+<p> this is directory</p>
+<!--<%= @directory.each do |dir| %>
+<% if File.directory?(dir)%>
+<p> <%=dir%> This is directory</p>
+<%elsif File.file?(dir)%>
+<p> <%=dir%> This is file </p>
+<% else %>
+<p> this is other</p>
+<%end%>
+<%end%>
+-->
 <div id="editor">some text</div>
  <!--<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>-->
         <script>

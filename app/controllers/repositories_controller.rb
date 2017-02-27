@@ -31,12 +31,19 @@
         @folder=File.basename("#{@repository.upload_file_name}",".zip")
         path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
         @files=Hash.new
-          Dir.entries("#{path}").each do |entries|
-            @files[entries]=path/entries
+        Dir.chdir("#{path}")
+          @directory= Dir.glob("*").each do |entries|
+            if File.directory?(entries)
+              @entry=Dir.glob("entries/*").each do|entries|
+              end
+            elsif File.file?(entries)
+            else
+            end
+              @files[entries]=path/entries
           end
         #Dir.chdir("public/system/repositories/uploads/extract/#{@folder}")
-
       end
+
 
     private
     def repository_params
