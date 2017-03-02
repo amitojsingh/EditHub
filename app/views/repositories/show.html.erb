@@ -1,16 +1,16 @@
 <P> aah chko </p>
+  <%= form_for :search do %>
 <%= @files.each do |key,value|%>
-<%=check_box_tag(key)%>
-<%=label_tag(key,key,checked_value=value)%>
-<br>
+ <%= check_box_tag(key, value, false, data: {remote: true, method: :post, url: generate_repository_path(:id) }) %>
+ <%= label_tag key%>
+<%end%>
 <%end%>
 <p> this is directory</p>
 <!--<%= @directory.each do |dir| %>
 <% if File.directory?(dir)%>
 <p> <%=dir%> This is directory</p>
 <%elsif File.file?(dir)%>
-<p> <%=dir%> This is file </p>
-<% else %>
+<p> <%=dir%> This is fil 'pair','key=value'<% else %>
 <p> this is other</p>
 <%end%>
 <%end%>

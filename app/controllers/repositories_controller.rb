@@ -43,7 +43,8 @@
           end
         #Dir.chdir("public/system/repositories/uploads/extract/#{@folder}")
       end
-
+      def generate
+      end
 
     private
     def repository_params
