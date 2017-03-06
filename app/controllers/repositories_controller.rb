@@ -47,13 +47,15 @@
         if File.directory?(@path)
            Dir.chdir("#{@path}")
            Dir.glob("*").each do |entries|
-             @file[entries]="#{@path}/entries"
+             @file[entries]="#{@path}/#{entries}"
             puts "#{entries}"
           end
             ActionCable.server.broadcast "operations",
           render(partial: 'operations/dir',object: @operations  )
           else
-            puts "It is a file"
+            @content=File.read(@path)
+            ActionCable.server.broadcast "editions",
+            render(partial: 'editions/listen',object:@editions)
           end
       end
 
