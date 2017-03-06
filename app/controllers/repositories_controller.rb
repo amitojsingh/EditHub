@@ -33,17 +33,27 @@
         @files=Hash.new
         Dir.chdir("#{path}")
           @directory= Dir.glob("*").each do |entries|
-            if File.directory?(entries)
-              @entry=Dir.glob("entries/*").each do|entries|
-              end
-            elsif File.file?(entries)
-            else
-            end
               @files[entries]=path/entries
           end
         #Dir.chdir("public/system/repositories/uploads/extract/#{@folder}")
       end
       def generate
+        request.POST.each do |key,value|
+          @filename=key
+          @path= value
+        end
+        @id=params[:id]
+        @file=Hash.new
+        if File.directory?(@path)
+           Dir.chdir("#{@path}")
+           Dir.glob("*").each do |entries|
+             @file[entries]="#{@path}/entries"
+            puts "#{entries}"
+          end
+          render(partial: 'operations/dir',object: @file)
+          else
+            puts "It is a file"
+          end
       end
 
     private
