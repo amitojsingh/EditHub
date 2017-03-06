@@ -50,7 +50,8 @@
              @file[entries]="#{@path}/entries"
             puts "#{entries}"
           end
-          render(partial: 'operations/dir',object: @file)
+            ActionCable.server.broadcast "operations",
+          render(partial: 'operations/dir',object: @operations  )
           else
             puts "It is a file"
           end

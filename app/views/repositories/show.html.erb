@@ -1,24 +1,13 @@
 <P> aah chko </p>
-
-<%= @files.each do |key,value|%>
- <div class="subdir">
- <%= check_box_tag(key, value, false, data: {remote: true, method: :post, url: generate_repository_path }) %>
+<div class="subdir">
+<% @files.each do |key,value|%>
+ <%= check_box_tag(key, value, false, data: {remote: true, method: :post, url: generate_repository_path }, class: "box") %>
  <%= label_tag key%>
- </div>
 <br>
+</div>
 <%end%>
-
-<!--<%= @directory.each do |dir| %>
-<% if File.directory?(dir)%>
-<p> <%=dir%> This is directory</p>
-<%elsif File.file?(dir)%>
-<p> <%=dir%> This is fil 'pair','key=value'<% else %>
-<p> this is other</p>
-<%end%>
-<%end%>
--->
 <div id="editor">some text</div>
  <!--<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>-->
-        <script>
-        var editor = ace.edit("editor");
-	    </script>
+ <script>
+ var editor = ace.edit("editor");
+</script>
