@@ -7,6 +7,6 @@ Rails.application.routes.draw do
  post "repositories/:id/generate", to: "repositories#generate", as: 'generate_repository'
  root "repositories#new"
 
- mount ActionCable.server => '/cable'
+ #mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

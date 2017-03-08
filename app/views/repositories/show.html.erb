@@ -1,12 +1,10 @@
 <P> aah chko </p>
-<div class="subdir">
-<% @files.each do |key,value|%>
- <%= check_box_tag(key, value, false, data: {remote: true, method: :post, url: generate_repository_path }, class: "box") %>
- <%= label_tag key%>
-<br>
-</div>
+<%@files.each do |file|%>
+<%=file%>
 <%end%>
-<div id="editor"></div>
+<div id="editor">
+
+</div>
  <!--<script src="src/ace.js" 1type="text/javascript" charset="utf-8"></script>-->
  <script>
  var editor = ace.edit("editor");

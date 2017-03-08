@@ -30,12 +30,12 @@
         @repository=Repository.find(params[:id])
         @folder=File.basename("#{@repository.upload_file_name}",".zip")
         path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
-        @files=Hash.new
         Dir.chdir("#{path}")
-          @directory= Dir.glob("*").each do |entries|
-              @files[entries]=path/entries
+        Dir.open(Dir.pwd).each do |filename|
+        next  if File.directory? filename
+    # otherwise, process file
+              #@files[entries]=path/entries
           end
-        #Dir.chdir("public/system/repositories/uploads/extract/#{@folder}")
       end
       def generate
         request.POST.each do |key,value|
@@ -50,12 +50,12 @@
              @file[entries]="#{@path}/#{entries}"
             puts "#{entries}"
           end
-            ActionCable.server.broadcast "operations",
-          render(partial: 'operations/dir',object: @operations  )
+            #ActionCable.server.broadcast "operations",
+          #render(partial: 'operations/dir',object: @operations  )
           else
             @content=File.read(@path)
-            ActionCable.server.broadcast "editions",
-            render(partial: 'editions/listen',object:@editions)
+          #  ActionCable.server.broadcast "editions",
+          #  render(partial: 'editions/listen',object:@editions)
           end
       end
 

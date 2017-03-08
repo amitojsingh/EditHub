@@ -7,4 +7,4 @@ App.editions = App.cable.subscriptions.create "EditionsChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $("#editor").append(data);
+    $("textare").append(data);
