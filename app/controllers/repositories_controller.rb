@@ -29,13 +29,15 @@
       def show
         @repository=Repository.find(params[:id])
         @folder=File.basename("#{@repository.upload_file_name}",".zip")
-        path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
-        Dir.chdir("#{path}")
-        Dir.open(Dir.pwd).each do |filename|
-        next  if File.directory? filename
+        @path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
+        Dir.chdir(@path)
+        @file=Dir.glob("**/*")
+      #  Dir.chdir("#{path}")
+      #  Dir.open(Dir.pwd).each do |filename|
+      #  next  if File.directory? filename
     # otherwise, process file
               #@files[entries]=path/entries
-          end
+      #    end
       end
       def generate
         request.POST.each do |key,value|

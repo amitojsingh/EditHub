@@ -42,7 +42,7 @@ gem 'zip-zip'
 
 # Use for the editor ace
 gem 'ace-rails-ap'
-
+gem 'record_tag_helper', '~> 1.0'
 
 group :development, :test do
   gem 'capybara', '2.7.1'

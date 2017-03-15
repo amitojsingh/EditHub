@@ -1,6 +1,6 @@
 class EditionsChannel < ApplicationCable::Channel
   def subscribed
-     stream_from "editions"
+  #   stream_from "editions"
   end
 
   def unsubscribed
