@@ -104,7 +104,7 @@ def callHash(hashtree)
 end
 
 def callArray(value)
-  sublist="<ul>"
+  sublist="<ul class=list>"
   value.each do |v|
     unless v==nil
       if v.is_a?(Hash)
