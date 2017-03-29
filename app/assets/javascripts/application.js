@@ -13,15 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require ace-rails-ap
-//= require repositories
-
-$(function(){
-  $("ul.list").hide();
-
-  $("li").click(function() {
-    $(this).children('ul.list').slideToggle();
-    return false;
-  });
-});
+//= require_tree .

@@ -1,4 +1,5 @@
   class RepositoriesController < ApplicationController
+
     def new
       @repository=Repository.new(repository_params)
     end
@@ -29,35 +30,23 @@
       def show
         @repository=Repository.find(params[:id])
         @folder=File.basename("#{@repository.upload_file_name}",".zip")
-        @path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
-        Dir.chdir(@path)
+        $path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
+        Dir.chdir($path)
         @file=Dir.glob("**/*")
-      #  Dir.chdir("#{path}")
-      #  Dir.open(Dir.pwd).each do |filename|
-      #  next  if File.directory? filename
-    # otherwise, process file
-              #@files[entries]=path/entries
-      #    end
       end
+
       def generate
-        request.POST.each do |key,value|
-          @filename=key
-          @path= value
+        request.GET.each do |key,value|
+          @pathvalue=value
         end
+        newpath=Rails.root.join($path,@pathvalue)
+        puts "#{newpath}"
         @id=params[:id]
         @file=Hash.new
-        if File.directory?(@path)
-           Dir.chdir("#{@path}")
-           Dir.glob("*").each do |entries|
-             @file[entries]="#{@path}/#{entries}"
-            puts "#{entries}"
-          end
-            #ActionCable.server.broadcast "operations",
-          #render(partial: 'operations/dir',object: @operations  )
-          else
-            @content=File.read(@path)
-          #  ActionCable.server.broadcast "editions",
-          #  render(partial: 'editions/listen',object:@editions)
+
+        if File.file?(newpath)
+            @content=File.read(newpath)
+            puts "#{@content}"
           end
       end
 

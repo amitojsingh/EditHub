@@ -85,15 +85,23 @@ def rasta(path)
   return @y
 end
 
+
 def callHash(hashtree)
   list=""
   hashtree.each do |key,value|
-    if key.include?('/')
-      list<<"<li>#{key.split('/').last}"
-    else
-      list<<"<li>#{key}"
-    end
     if value.is_a?(Array)
+      if key.include?('/')
+        list<<"<li class='folder'>"
+        list<<"#{key.split('/').last}"
+      else
+        if (value-[nil]).empty?
+          list<<"<li class='root'>"
+          list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
+        else
+          list<<"<li class='folder'>"
+          list<<"#{key}"
+      end
+      end
       list<<callArray(value)
     else
       list<<"</li>"
@@ -111,9 +119,12 @@ def callArray(value)
         sublist<<callHash(v)
       else
         if v.include?('/')
-          sublist<<"<li>#{v.split('/').last}</li>"
+          sublist<<"<li>"
+         sublist<<link_to("#{v.split('/').last}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"file")
+          sublist<<"</li>"
         else
-          sublist<<"<li>#{v}</li>"
+          sublist<<"<li>"
+          sublist<<link_to("#{v}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"file")
         end
       end
     end
