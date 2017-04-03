@@ -92,14 +92,14 @@ def callHash(hashtree)
     if value.is_a?(Array)
       if key.include?('/')
         list<<"<li class='folder'>"
-        list<<"#{key.split('/').last}"
+        list<<"<span>#{key.split('/').last}</span>"
       else
         if (value-[nil]).empty?
           list<<"<li class='root'>"
-          list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
+          list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file",'remote' => true)
         else
           list<<"<li class='folder'>"
-          list<<"#{key}"
+          list<<"<span>#{key}</span>"
       end
       end
       list<<callArray(value)

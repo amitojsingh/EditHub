@@ -1,5 +1,5 @@
   class RepositoriesController < ApplicationController
-
+    skip_before_filter :require_no_authentication, only: [:new]
     def new
       @repository=Repository.new(repository_params)
     end
@@ -47,6 +47,10 @@
         if File.file?(newpath)
             @content=File.read(newpath)
             puts "#{@content}"
+          end
+
+          respond_to do |format|
+            format.json { render json: @content }
           end
       end
 
