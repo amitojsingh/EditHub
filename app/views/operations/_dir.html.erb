@@ -1,5 +1,0 @@
-<% @file.each do |key,value|%>
- <%= check_box_tag(key, value, false, data: {remote: true, method: :post, url: generate_repository_path }) %>
- <%= label_tag key%>
-<br>
-<%end%>

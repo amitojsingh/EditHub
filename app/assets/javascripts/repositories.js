@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
   $('.folder>span').click(function() {
     console.log("chalpyaaaa");
     $(this).next('.list').slideToggle();

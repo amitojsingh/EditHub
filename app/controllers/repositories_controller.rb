@@ -29,10 +29,16 @@
     end
       def show
         @repository=Repository.find(params[:id])
+        if @repository.user==current_user
         @folder=File.basename("#{@repository.upload_file_name}",".zip")
         $path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
         Dir.chdir($path)
         @file=Dir.glob("**/*")
+
+      else
+        redirect_to repositories_path
+        flash[:alert]= "Don't Try to be Smart"
+      end
       end
 
       def generate
