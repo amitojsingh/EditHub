@@ -5,6 +5,7 @@ $(document).ready(function(){
     return false;
   });
 
+    
     $("a.file").click(function(event){
       event.preventDefault();
       var url=$(this).attr("dataurl");

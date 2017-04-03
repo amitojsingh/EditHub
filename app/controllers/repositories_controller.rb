@@ -1,5 +1,5 @@
   class RepositoriesController < ApplicationController
-    skip_before_filter :require_no_authentication, only: [:new]
+    before_action :authenticate_user!
     def new
       @repository=Repository.new(repository_params)
     end
@@ -9,7 +9,7 @@
     end
     def create
       @repository=Repository.create(repository_params)
-
+      @repository.user=current_user
         if @repository.save
           puts "successfully saved"
           Zip::File.open("#{@repository.upload.path}") do |file|
