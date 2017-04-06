@@ -65,6 +65,7 @@ puts "#{@finalTree}"
 @html<<"<ul>"
 if @finalTree.is_a?(Hash)
   mainlist=callHash(@finalTree)
+  puts "mainlist----#{mainlist}"
 end
 @html<<mainlist
 @html<<"</ul>"
@@ -104,6 +105,8 @@ def callHash(hashtree)
       end
       list<<callArray(value)
     else
+      list<<"<li>"
+      list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
       list<<"</li>"
     end
   end

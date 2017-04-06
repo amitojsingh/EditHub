@@ -9,29 +9,24 @@
       @gitrepo =  Gitrepo.all
     end
     def create
-      Dir.home
-        @repository=Repository.create(repository_params)
-        @repository.user=current_user
-          if @repository.save
-            puts "successfully saved"
-            $value=1
-            Zip::File.open("#{@repository.upload.path}") do |file|
-
-                file.each do |entry|
-                  entry_path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}", entry.name)
-                          FileUtils.mkdir_p(File.dirname(entry_path))
-                          entry.extract(entry_path) unless File.exist?(entry_path)
-                        end
-                      end
-                      flash[:success]="Successfully created"
-                      redirect_to repositories_path
-                    else
-                      flash[:danger]="Unable to extract"
-                      redirect_to repositories_new_path
-                    end
-
-
+      @repository=Repository.create(repository_params)
+      @repository.user=current_user
+      if @repository.save
+          Zip::File.open("#{@repository.upload.path}") do |file|
+            file.each do |entry|
+                entry_path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}", entry.name)
+                FileUtils.mkdir_p(File.dirname(entry_path))
+                entry.extract(entry_path) unless File.exist?(entry_path)
+            end
+          end
+            flash[:success]="Successfully created"
+            redirect_to repository_path(@repository.id)
+        else
+          flash[:danger]="Unable to extract"
+          redirect_to repositories_new_path
+        end
     end
+
       def show
           @repository=Repository.find(params[:id])
           if @repository.user==current_user
@@ -39,11 +34,10 @@
             $path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
             Dir.chdir($path)
             @file=Dir.glob("**/*")
-
-        else
-          redirect_to repositories_path
-          flash[:alert]= "Don't Try to be Smart"
-        end
+          else
+            redirect_to repositories_path
+            flash[:alert]= "Don't Try to be Smart"
+          end
       end
 
       def generate
@@ -51,11 +45,10 @@
           @pathvalue=value
         end
         newpath=Rails.root.join($path,@pathvalue)
-        puts "#{newpath}"
         @id=params[:id]
         @file=Hash.new
 
-        if File.file?(newpath)
+        if File.file?(newpath)  
             @content=File.read(newpath)
             puts "#{@content}"
           end

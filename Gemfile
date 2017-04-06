@@ -27,8 +27,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
+# Use devise for authentication
 gem 'devise', '~>4.2.0'
+# jquery-turbolinks
 gem 'jquery-turbolinks'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -41,11 +42,14 @@ gem 'jquery-turbolinks'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use rubyzip to read zip files
 gem 'rubyzip','>=1.0.0'
+# Use zip-zip to zip files
 gem 'zip-zip'
+# Github API
 gem 'github_api'
 
 # Use for the editor ace
 gem 'ace-rails-ap'
+
 gem 'record_tag_helper', '~> 1.0'
 
 group :development, :test do

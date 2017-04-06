@@ -4,7 +4,7 @@ $(document).on('turbolinks:load',function(){
     $(this).next('.list').slideToggle();
     return false;
   });
-
+var editor = ace.edit("editor");
     $("a.file").click(function(event){
       event.preventDefault();
       var url=$(this).attr("dataurl");
