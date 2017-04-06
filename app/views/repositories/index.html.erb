@@ -1,8 +1,13 @@
 <%= flash[:alert] %>
-<h1>Repositories#index</h1>
 <%=link_to "upload",repositories_new_path%>
+
 <%@repository.each do |d|%>
 <%if d.user_id==current_user.id%>
 <%=link_to d.upload_file_name, repository_path(d)%>
 <%end%>
+<%end%>
+
+<%@gitrepo.each do |repo|%>
+<%reponame=repo.url.split('/').last%>
+<%=link_to reponame,gitrepo_path(repo)%>
 <%end%>

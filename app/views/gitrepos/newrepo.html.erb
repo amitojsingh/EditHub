@@ -1,0 +1,7 @@
+<h1>Gitrepos#newrepo</h1>
+<p>Find me in app/views/gitrepos/newrepo.html.erb</p>
+<%=form_for @gitrepo do |form|%>
+<%=form.label "Paste your github link here"%>
+<%=form.text_field :url%>
+<%=form.submit%>
+<%end%>

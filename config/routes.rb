@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'gitrepos/newrepo'
+  post 'gitrepos/newrepo'
+  get 'gitrepos/:id',to: "gitrepos#show",as: "gitrepo"
+  post "gitrepos", to: "gitrepos#create"
   devise_for :users, controllers: { registrations: "registrations" }
  get 'repositories/new'
  get 'repositories/:id', to: "repositories#show", as: "repository"
- get "repositories", to: "repositories#index", as: "repositories"
+ get "repositories", to: "repositories#index", as: "repositories_index"
  post "repositories", to: "repositories#create"
  get "repositories/:id/generate", to: "repositories#generate",as: "generate_repository",:defaults=>{:format=>'json'}
 

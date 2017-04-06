@@ -1,0 +1,2 @@
+class Gitrepo < ApplicationRecord
+end

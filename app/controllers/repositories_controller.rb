@@ -6,39 +6,44 @@
 
     def index
       @repository=Repository.all
+      @gitrepo =  Gitrepo.all
     end
     def create
-      @repository=Repository.create(repository_params)
-      @repository.user=current_user
-        if @repository.save
-          puts "successfully saved"
-          Zip::File.open("#{@repository.upload.path}") do |file|
+      Dir.home
+        @repository=Repository.create(repository_params)
+        @repository.user=current_user
+          if @repository.save
+            puts "successfully saved"
+            $value=1
+            Zip::File.open("#{@repository.upload.path}") do |file|
 
-              file.each do |entry|
-                entry_path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}", entry.name)
-                        FileUtils.mkdir_p(File.dirname(entry_path))
-                        entry.extract(entry_path) unless File.exist?(entry_path)
+                file.each do |entry|
+                  entry_path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}", entry.name)
+                          FileUtils.mkdir_p(File.dirname(entry_path))
+                          entry.extract(entry_path) unless File.exist?(entry_path)
+                        end
                       end
+                      flash[:success]="Successfully created"
+                      redirect_to repositories_path
+                    else
+                      flash[:danger]="Unable to extract"
+                      redirect_to repositories_new_path
                     end
-            flash[:success]="Successfully created"
-          redirect_to repositories_path
-        else
-          flash[:danger]="Unable to extract"
-          redirect_to repositories_new_path
-        end
+
+
     end
       def show
-        @repository=Repository.find(params[:id])
-        if @repository.user==current_user
-        @folder=File.basename("#{@repository.upload_file_name}",".zip")
-        $path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
-        Dir.chdir($path)
-        @file=Dir.glob("**/*")
+          @repository=Repository.find(params[:id])
+          if @repository.user==current_user
+            @folder=File.basename("#{@repository.upload_file_name}",".zip")
+            $path=Rails.root.join("public/system/repositories/uploads/extract/#{@repository.id}" ,@folder)
+            Dir.chdir($path)
+            @file=Dir.glob("**/*")
 
-      else
-        redirect_to repositories_path
-        flash[:alert]= "Don't Try to be Smart"
-      end
+        else
+          redirect_to repositories_path
+          flash[:alert]= "Don't Try to be Smart"
+        end
       end
 
       def generate
@@ -59,7 +64,6 @@
             format.json { render json: @content }
           end
       end
-
     private
     def repository_params
     params.permit(:id,:upload)

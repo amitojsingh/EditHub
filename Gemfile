@@ -42,6 +42,7 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use rubyzip to read zip files
 gem 'rubyzip','>=1.0.0'
 gem 'zip-zip'
+gem 'github_api'
 
 # Use for the editor ace
 gem 'ace-rails-ap'

@@ -96,7 +96,7 @@ def callHash(hashtree)
       else
         if (value-[nil]).empty?
           list<<"<li class='root'>"
-          list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file",'remote' => true)
+          list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
         else
           list<<"<li class='folder'>"
           list<<"<span>#{key}</span>"
