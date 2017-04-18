@@ -1,138 +1,134 @@
+# This generates repository tree
 module RepositoriesHelper
-
 def traversal
-dirMap={}
-partsOfPath=[]
-dirTree={}
-parents=[]
-tree=[]
-newtree=[]
-@finalTree={}
-@html=''
-@file.each do |path|
-  partsOfPath=rasta(path)
-  tree<<path.split('/').first
-  puts "files or directories inside #{path}"
-  (0...partsOfPath.length).each do |i|
-    fileDir=partsOfPath[i];
-    puts "#{fileDir}"
-    if (!dirMap[fileDir])
-      dirMap[fileDir]=[partsOfPath[i+1]]
-    else
-      if (!dirMap[fileDir].include?(partsOfPath[i+1]))
-      dirMap[fileDir].push(partsOfPath[i+1])
+  dir_map = {}
+  parts_of_path = []
+  dir_tree = {}
+  parents = []
+  tree = []
+  newtree = []
+  @final_tree = {}
+  @html = ''
+  @file.each do |path|
+    parts_of_path = rasta(path)
+    tree << path.split('/').first
+    puts "files or directories inside #{path}"
+    (0...parts_of_path.length).each do |i|
+      file_dir = parts_of_path[i]
+      puts file_dir
+      if !dir_map[file_dir]
+        dir_map[file_dir] = [parts_of_path[i + 1]]
+      else
+        unless dir_map[file_dir].include?(parts_of_path[i + 1])
+          dir_map[file_dir].push(parts_of_path[i + 1])
+        end
+      end
     end
   end
-end
-end
-puts "#{dirMap}"
+  puts dir_map
 
-dirMap.each do |key,value|
-  if(!(dirMap[key].length===1 && dirMap[key][0]=== nil))
-    parents<<key
-  end
-end
-puts "parents are #{parents}"
-
-parents.each do |key|
-  dirMapValue=dirMap[key]
-  dirMap.each do |jkey,jvalue|
-    isKeyInValue=dirMap[jkey].include?(key)
-    if (isKeyInValue)
-      indexOfKeyInValue=dirMap[jkey].index("#{key}")
-      puts "#{jkey} contains #{key} at index #{indexOfKeyInValue}"
-      myobj={}
-      myobj[key]=dirMap[key]
-      puts "object to add at index #{indexOfKeyInValue} is #{myobj}"
-      dirMap[jkey][indexOfKeyInValue]={}
-      dirMap[jkey][indexOfKeyInValue][key]=dirMap[key]
-      dirTree[jkey]=dirMap[jkey]
-
-    else
-      dirTree[jkey]=dirMap[jkey]
+  dir_map.each do |key, _value|
+    unless dir_map[key].length === 1 && dir_map[key][0] === nil
+      parents << key
     end
   end
-end
-#puts "#{dirTree}"
+  puts "parents are #{parents}"
 
-newtree<<tree.uniq
-newtree.each do |element|
-  element.each do |e|
-    @finalTree[e]=dirTree[e]
+  parents.each do |key|
+    dir_map.each do |jkey, _jvalue|
+      is_key_in_value = dir_map[jkey].include?(key)
+      if is_key_in_value
+        index_of_key_in_value = dir_map[jkey].index(key)
+        puts "#{jkey} contains #{key} at index #{index_of_key_in_value}"
+        myobj = {}
+        myobj[key] = dir_map[key]
+        puts "object to add at index #{index_of_key_in_value} is #{myobj}"
+        dir_map[jkey][index_of_key_in_value] = {}
+        dir_map[jkey][index_of_key_in_value][key] = dir_map[key]
+      end
+      dir_tree[jkey] = dir_map[jkey]
+    end
   end
+  # puts "#{dir_tree}"
+
+  newtree << tree.uniq
+  newtree.each do |element|
+    element.each do |e|
+      @final_tree[e] = dir_tree[e]
+    end
+  end
+  puts @final_tree
+  @html << '<ul>'
+  if @final_tree.is_a?(Hash)
+    mainlist = callHash(@final_tree)
+    puts "mainlist----#{mainlist}"
+  end
+  @html << mainlist
+  @html << '</ul>'
+  return @html
 end
-puts "#{@finalTree}"
-@html<<"<ul>"
-if @finalTree.is_a?(Hash)
-  mainlist=callHash(@finalTree)
-  puts "mainlist----#{mainlist}"
 end
-@html<<mainlist
-@html<<"</ul>"
-return @html
-end
+
 def rasta(path)
-  x=path.split('/')
-  @y=[]
+  x = path.split('/')
+  @y = []
   (0...x.length).each do |i|
-    (0...i+1).each do |j|
+    (0...i + 1).each do |j|
       if !@y[i].nil?
-        @y[i]="#{@y[i]}/#{x[j]}"
-        else
-        @y[i]=x[j]
+        @y[i] = "#{@y[i]}/#{x[j]}"
+      else
+        @y[i] = x[j]
       end
     end
   end
   return @y
 end
 
-
 def callHash(hashtree)
-  list=""
-  hashtree.each do |key,value|
+  list = ''
+  hashtree.each do |key, value|
     if value.is_a?(Array)
       if key.include?('/')
-        list<<"<li class='folder'>"
-        list<<"<span>#{key.split('/').last}</span>"
+        list << "<li class='folder'>"
+        list << "<span>#{key.split('/').last}</span>"
       else
-        if (value-[nil]).empty?
-          list<<"<li class='root'>"
-          list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
+        if (value - [nil]).empty?
+          list << "<li class='root'>"
+          list << link_to("#{key}", '#', :dataurl=>generate_repository_url(:name=>key),:class=>"file")
         else
-          list<<"<li class='folder'>"
-          list<<"<span>#{key}</span>"
+          list << "<li class='folder'>"
+          list << "<span>#{key}</span>"
+        end
       end
-      end
-      list<<callArray(value)
+      list << callArray(value)
     else
-      list<<"<li>"
-      list<<link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
-      list<<"</li>"
+      list << '<li>'
+      list << link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
+      list << '</li>'
     end
   end
-  list<<"</li>"
+  list << '</li>'
   return list
 end
 
 def callArray(value)
-  sublist="<ul class=list>"
+  sublist = '<ul class=list>'
   value.each do |v|
-    unless v==nil
+    unless v.nil?
       if v.is_a?(Hash)
-        sublist<<callHash(v)
+        sublist << callHash(v)
       else
         if v.include?('/')
-          sublist<<"<li>"
-         sublist<<link_to("#{v.split('/').last}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"file")
-          sublist<<"</li>"
+          sublist << '<li>'
+         sublist << link_to("#{v.split('/').last}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"file")
+          sublist << '</li>'
         else
-          sublist<<"<li>"
+          sublist << '<li>'
           sublist<<link_to("#{v}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"file")
         end
       end
     end
   end
-  sublist<<"</ul></li>"
+  sublist << '</ul></li>'
   return sublist
-end
 end
