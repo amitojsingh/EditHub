@@ -5,6 +5,7 @@ $(document).on('turbolinks:load',function(){
     return false;
   });
 var editor = ace.edit("editor");
+editor.setReadOnly(false);
     $("a.file").click(function(event){
       event.preventDefault();
       var url=$(this).attr("dataurl");
@@ -15,7 +16,7 @@ var editor = ace.edit("editor");
         dataType: 'text',
         success: function(data){
           console.log(data);
-          $(".ace_content").html(data);
+          editor.setValue(data);
         },
         error:function(xhr,status,error){
           console.log(status);

@@ -14,6 +14,7 @@ class RepositoriesController < ApplicationController
     @repository = Repository.create(repository_params)
     @repository.user = current_user
     if @repository.save
+      Dir.chdir(Rails.root)
       create_repo
       flash[:success] = 'Successfully created'
       redirect_to repository_path(@repository.id)
@@ -72,6 +73,7 @@ class RepositoriesController < ApplicationController
     @file = {}
     if File.file?(newpath)
       @content = File.read(newpath)
+      puts "content=#{@content}"
     end
     respond_to do |format|
       format.json { render json: @content }
