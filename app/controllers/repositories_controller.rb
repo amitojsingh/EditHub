@@ -73,7 +73,6 @@ class RepositoriesController < ApplicationController
     @file = {}
     if File.file?(newpath)
       @content = File.read(newpath)
-      puts "content=#{@content}"
     end
     respond_to do |format|
       format.json { render json: @content }
