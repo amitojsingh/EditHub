@@ -1,23 +1,54 @@
-  @import "variable.scss";
-  .traversal{
-    ul{
-      li,a{
-        color:#ecf0f1;
-          }
-      .list{
-        display:none;
+    @import "variable.scss";
+    .traversal{
+      ul{
+        li,a{
+          color:#ecf0f1;
+            }
+        .list{
+          display:none;
+            }
           }
         }
-      }
-  #editor{
-        color:$silver;
-        background-color:$wet_Asphalt;
-        font:16px $text_font;
-        .ace_gutter{
+    .editor{
           color:$silver;
-          background-color: $wet_Asphalt;
-          .ace_gutter-active-line{
-            background-color:$midnight_blue;
+          background-color:$wet_Asphalt;
+          font:16px $text_font;
+          .ace_gutter{
+            color:$silver;
+            background-color: $wet_Asphalt;
+            .ace_gutter-active-line{
+              background-color:$midnight_blue;
+            }
           }
-        }
-}
+  }
+  .pannels{
+    ul#tabs{
+      height:100%;
+      width:100%;
+      display:flex;
+      list-style: none;
+      li{
+        height:100%;
+        width:100%;
+        .editor{
+        display:none;
+        z-index: 1;
+        min-height:85%;
+      }
+      }
+      li.current{
+        .editor{
+        display:block;
+        position:absolute;
+        z-index: 2;
+        left:20%;
+        width:80%;
+      }
+      }
+    }
+  }
+  .pannels:after{
+    clear:both;
+    display:block;
+    content: "";
+  }

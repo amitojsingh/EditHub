@@ -23,8 +23,12 @@ header{
   overflow:auto;
 }
 
-#editor{
-  width: 80%;
-  height: 90%;
+.pannels{
+  width:80%;
+  height:80%;
   float:right;
+}
+.editor{
+  width: 90%;
+  height: 80%;
 }
