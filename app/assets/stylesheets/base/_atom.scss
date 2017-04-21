@@ -1,26 +1,35 @@
 @import "variable.scss";
 
-.folder,.folder_up{
-  list-style-image: url("folder.png");
+.folder,
+.folder_up {
+    list-style-image: url("folder.png");
 }
-.folder_down{
-  list-style-image: url("archive.png")
+
+.folder_down {
+    list-style-image: url("archive.png");
 }
-.file{
-  list-style-image: url("file.png");
+
+.file {
+    list-style-image: url("file.png");
 }
-a.link,.signout{
-  text-decoration: none;
+
+.signout,
+a.link {
+    text-decoration: none;
 }
-a.link,.folder{
-  color:$silver;
+
+.folder,
+a.link {
+    color: $silver;
 }
-a.signout{
-  color:$silver;
-  font-size:20px;
-  float:right;
+
+a.signout {
+    color: $silver;
+    font-size: 20px;
+    float: right;
 }
-  .ace_selection{
-    background:$dusty;
+
+.ace_selection {
+    background: $dusty;
     opacity: 0.2;
-  }
+}
