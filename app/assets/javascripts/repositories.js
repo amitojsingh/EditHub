@@ -2,11 +2,12 @@ $(document).on('turbolinks:load',function(){
   $('.folder>span').click(function() {
     console.log("chalpyaaaa");
     $(this).next('.list').slideToggle();
-    return false;
+    console.log(this);
+    $(this).parent('li.folder').toggleClass("folder_down");
+    console.log(this);
   });
 var editor = ace.edit("editor");
-editor.setReadOnly(false);
-    $("a.file").click(function(event){
+    $("a.link").click(function(event){
       event.preventDefault();
       var url=$(this).attr("dataurl");
       console.log(url);

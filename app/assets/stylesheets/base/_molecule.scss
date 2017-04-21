@@ -1,0 +1,23 @@
+  @import "variable.scss";
+  .traversal{
+    ul{
+      li,a{
+        color:#ecf0f1;
+          }
+      .list{
+        display:none;
+          }
+        }
+      }
+  #editor{
+        color:$silver;
+        background-color:$wet_Asphalt;
+        font:16px $text_font;
+        .ace_gutter{
+          color:$silver;
+          background-color: $wet_Asphalt;
+          .ace_gutter-active-line{
+            background-color:$midnight_blue;
+          }
+        }
+}

@@ -93,8 +93,8 @@ def callHash(hashtree)
         list << "<span>#{key.split('/').last}</span>"
       else
         if (value - [nil]).empty?
-          list << "<li class='root'>"
-          list << link_to("#{key}", '#', :dataurl=>generate_repository_url(:name=>key),:class=>"file")
+          list << "<li class='file'>"
+          list << link_to("#{key}", '#', :dataurl=>generate_repository_url(:name=>key),:class=>"link")
         else
           list << "<li class='folder'>"
           list << "<span>#{key}</span>"
@@ -102,8 +102,8 @@ def callHash(hashtree)
       end
       list << callArray(value)
     else
-      list << '<li>'
-      list << link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"file")
+      list << '<li class=file>'
+      list << link_to("#{key}",'#',:dataurl=>generate_repository_url(:name=>key),:class=>"link")
       list << '</li>'
     end
   end
@@ -112,19 +112,19 @@ def callHash(hashtree)
 end
 
 def callArray(value)
-  sublist = '<ul class=list>'
+  sublist = "<ul class='list'>"
   value.each do |v|
     unless v.nil?
       if v.is_a?(Hash)
         sublist << callHash(v)
       else
         if v.include?('/')
-          sublist << '<li>'
-         sublist << link_to("#{v.split('/').last}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"file")
+          sublist << "<li class='file'>"
+          sublist << link_to("#{v.split('/').last}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"link")
           sublist << '</li>'
         else
-          sublist << '<li>'
-          sublist<<link_to("#{v}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"file")
+          sublist << "<li class='file'>"
+          sublist<<link_to("#{v}",'#',:dataurl=>generate_repository_url(:name=>v),:class=>"link")
         end
       end
     end

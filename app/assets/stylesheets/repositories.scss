@@ -1,24 +1,7 @@
 // Place all the styles related to the repositories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-html,body{
-  width:100%;
-  height:100%;
-  margin:0;
-}
-
-.traversal
-{
-  width:30%;
-  height:100%;
-  float:left;
-  .list{
-    display:none;
-  }
-}
-#editor {
-  float:right;
-        width: 70%;
-        height: 100%;
-    }
+@import "base/atom.scss";
+@import "base/template.scss";
+@import "base/molecule.scss";
+@import "base/page.scss";
