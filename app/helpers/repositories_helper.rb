@@ -94,7 +94,7 @@ def callHash(hashtree)
       else
         if (value - [nil]).empty?
           list << "<li class='file'>"
-          list << link_to(key, '#', dataurl: generate_repository_url(name: key), class: "link", rel: key)
+          list << link_to(key, '#', dataurl: generate_repository_url(name: key), class: "link", rel: key, datapath:generate_repository_path(name:key))
         else
           list << "<li class='folder'>"
           list << "<span>#{key}</span>"
@@ -103,7 +103,7 @@ def callHash(hashtree)
       list << callArray(value)
     else
       list << '<li class=file>'
-      list << link_to(key, '#', dataurl: generate_repository_url(name: key), class: "link", rel: key)
+      list << link_to(key, '#', dataurl: generate_repository_url(name: key), class: "link", rel: key, datapath:generate_repository_path(name:key))
       list << '</li>'
     end
   end
@@ -120,10 +120,10 @@ def callArray(value)
       else
         sublist << "<li class='file'>"
         if v.include?('/')
-          sublist << link_to(v.split('/').last, '#', dataurl: generate_repository_url(name: v), class: "link", rel: v)
+          sublist << link_to(v.split('/').last, '#', dataurl: generate_repository_url(name: v), class: "link", rel: v, datapath:generate_repository_path(name:v))
           sublist << '</li>'
         else
-          sublist << link_to(v, '#', dataurl: generate_repository_url(name: v), class: "link", rel: v)
+          sublist << link_to(v, '#', dataurl: generate_repository_url(name: v), class: "link", rel: v, datapath:generate_repository_path(name:v))
         end
       end
     end

@@ -18,6 +18,12 @@ function addTab(link) {
     console.log(name);
     var editor = ace.edit(name);
     var url = $(link).attr("dataurl");
+    var path = $(link).attr("rel");
+    var modelist = ace.require("ace/ext/modelist");
+    var mode = modelist.getModeForPath(path).mode;
+    console.log(mode);
+    editor.session.setMode(mode);
+    console.log(path);
     console.log(url);
     $.ajax({
         url: url,

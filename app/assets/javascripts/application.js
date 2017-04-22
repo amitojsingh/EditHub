@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks 
+//= require jquery.turbolinks
 //= require turbolinks
 //= require ace-rails-ap
+//= require ace/ext-modelist.js
 //= require_tree .
