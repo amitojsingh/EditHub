@@ -51,8 +51,8 @@
                 display: block;
                 position: absolute;
                 z-index: 2;
-                left: 20%;
-                width: 80%;
+                left:20%;
+                width:950px;
             }
         }
     }
@@ -60,6 +60,9 @@
 
 .pannels:after {
     clear: both;
-    display: block;
-    content: "";
+}
+
+.tab-wrapper{
+  background-color:$wet_Asphalt;
+  width:100%;
 }

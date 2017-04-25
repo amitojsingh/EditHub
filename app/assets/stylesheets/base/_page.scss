@@ -1,1 +1,49 @@
+.editor,
+ul#tabs {
+    margin: 0;
+    padding: 0;
+}
+@media screen and (max-width:44em) {
+    $menu_width: 20em;
 
+    body {
+        overflow-x: hidden;
+    }
+
+    .traversal {
+        position: absolute;
+        left: -$menu_width;
+        width: $menu_width;
+
+        ul > li {
+            width: 100%;
+        }
+    }
+
+    label[for="menu-list"] {
+        display: block;
+    }
+
+    label[for="menu-list"]:after {
+        position: absolute;
+        content: "\2261";
+    }
+
+    input:checked#menu-list ~ .traversal {
+        left: 0;
+
+        label[for="remove"] {
+            display: block;
+            color: #fff;
+        }
+    }
+
+    input:checked#menu-list ~ .pannels {
+        margin-left: $menu_width + 0.5em;
+        margin-righ: -($menu_width + .5em);
+    }
+
+    input:checked#remove ~ .traversal {
+        display: none;
+    }
+}

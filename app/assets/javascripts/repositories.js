@@ -2,11 +2,11 @@ $(document).on('turbolinks:load', function() {
     $('.folder>span').click(function() {
         $(this).next('.list').slideToggle();
         $(this).parent('li.folder').toggleClass("folder_down");
-    });
-    $("a.link").click(function(event) {
+      });
+      $("a.link").click(function(event) {
         event.preventDefault();
         addTab($(this));
-    });
+      });
 });
 
 function addTab(link) {
@@ -38,18 +38,20 @@ function addTab(link) {
             console.log(error);
         }
     });
-    $('#tabs a.tab').on('click', function(e) {
+    $(function(){
+      $('#tabs a.tab').on('click', function(e) {
         e.preventDefault();
         var active = $(this).parent().parent();
         $('#tabs li').removeClass("current");
         $(active).addClass("current");
-    })
-    $('#tabs a.remove').on('click', function(e) {
+      });
+      $('#tabs a.remove').on('click', function(e) {
         e.preventDefault();
-        $('#tabs li').removeClass("current");
+        console.log("chall pya!");
+        $(this).parent().parent('li').prev('li').addClass("current");
+        $(this).parent().parent('li').remove();
         var tabid = $(this).parent().find(".tab").attr("id");
-        var Parent = $(this).parent();
-        $(Parent).parent('li').prev('li').addClass("current");
-        $(Parent).parent().remove();
+      });
+
     });
 }

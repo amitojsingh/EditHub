@@ -13,9 +13,11 @@
     list-style-image: url("file.png");
 }
 
-.signout,
-a.link {
-    text-decoration: none;
+a.signout,
+a.link,
+a.tab,
+a.remove{
+  text-decoration: none;
 }
 
 .folder,
@@ -23,13 +25,26 @@ a.link {
     color: $silver;
 }
 
-a.signout {
+a.signout,
+a.remove {
     color: $silver;
-    font-size: 20px;
-    float: right;
+    font-size: 1em;
 }
 
 .ace_selection {
     background: $dusty;
     opacity: 0.2;
+}
+a.tab{
+  font-size:0.8em;
+  color:$silver;
+}
+#menu-list,
+#remove{
+  display:none;
+}
+label {
+  position: absolute;
+  left: 0;
+  display: none;
 }
