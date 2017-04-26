@@ -4,26 +4,11 @@
     ul {
         a,
         li {
-            color: #ecf0f1;
+            color: $silver;
         }
 
         .list {
             display: none;
-        }
-    }
-}
-
-.editor {
-    color: $silver;
-    background-color: $wet_Asphalt;
-    font: 16px $text_font;
-
-    .ace_gutter {
-        color: $silver;
-        background-color: $wet_Asphalt;
-
-        .ace_gutter-active-line {
-            background-color: $midnight_blue;
         }
     }
 }
@@ -42,27 +27,29 @@
             .editor {
                 display: none;
                 z-index: 1;
-                min-height: 85%;
+                font: 1em $text_font;
+            }
+
+            .tab-wrapper {
+                background-color: $tab-color;
+                border-top: 1px solid $inactive-color;
             }
         }
 
         li.current {
             .editor {
                 display: block;
-                position: absolute;
+              
                 z-index: 2;
-                left:20%;
-                width:950px;
+                width: 100%;
+                height:100%;
+                overflow: auto;
+            }
+
+            .tab-wrapper {
+                background-color: $search;
+                border-top: 1px solid $tab-border;
             }
         }
     }
-}
-
-.pannels:after {
-    clear: both;
-}
-
-.tab-wrapper{
-  background-color:$wet_Asphalt;
-  width:100%;
 }

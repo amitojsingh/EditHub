@@ -23,6 +23,8 @@ function addTab(link) {
     var mode = modelist.getModeForPath(path).mode;
     console.log(mode);
     editor.session.setMode(mode);
+    editor.setTheme('ace/theme/twilight');
+    editor.resize();
     console.log(path);
     console.log(url);
     $.ajax({
@@ -32,7 +34,7 @@ function addTab(link) {
         success: function(data) {
             console.log(data);
             editor.setValue(data);
-        },
+            },
         error: function(xhr, status, error) {
             console.log(status);
             console.log(error);

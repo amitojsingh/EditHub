@@ -5,9 +5,12 @@ ul#tabs {
 }
 @media screen and (max-width:44em) {
     $menu_width: 20em;
-
-    body {
-        overflow-x: hidden;
+    .pannels{
+      width:100%;
+      height:100%;
+      .editor{
+        left:0;
+      }
     }
 
     .traversal {

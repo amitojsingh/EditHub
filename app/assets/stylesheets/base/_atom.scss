@@ -13,11 +13,11 @@
     list-style-image: url("file.png");
 }
 
-a.signout,
 a.link,
-a.tab,
-a.remove{
-  text-decoration: none;
+a.remove,
+a.signout,
+a.tab {
+    text-decoration: none;
 }
 
 .folder,
@@ -25,26 +25,63 @@ a.link {
     color: $silver;
 }
 
-a.signout,
-a.remove {
+a.remove,
+a.signout {
     color: $silver;
     font-size: 1em;
 }
 
-.ace_selection {
-    background: $dusty;
-    opacity: 0.2;
+a.tab {
+    font-size: 0.8em;
+    color: $silver;
 }
-a.tab{
-  font-size:0.8em;
-  color:$silver;
-}
+
+a.remove {
+    float: right;
+    font-weight: bold;
+  }
+
 #menu-list,
-#remove{
-  display:none;
+#remove {
+    display: none;
 }
+
 label {
-  position: absolute;
-  left: 0;
-  display: none;
+    position: absolute;
+    left: 0;
+    display: none;
+}
+
+.tab-wrapper {
+    background-color: $tab-color;
+    width: 100%;
+    height: 2.5em;
+    text-align: center;
+    min-width: 150px;
+}
+
+.editor {
+    resize: both;
+    direction:ltr;
+    overflow: auto;
+}
+
+.ace-gutter {
+    background-color: $editor;
+}
+
+.search {
+    background-color: $search;
+    border: none;
+    color: $silver;
+}
+
+.folder,
+a.link {
+    font: 0.8em $font;
+}
+
+.file:hover {
+    width: 100%;
+    background-color: #131313;
 }
