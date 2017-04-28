@@ -15,21 +15,13 @@
 
 .pannels {
     ul#tabs {
-        height: 100%;
-        width: 100%;
+        height:5%;
         display: flex;
         list-style: none;
 
         li {
-            height: 100%;
             width: 100%;
-
-            .editor {
-                display: none;
-                z-index: 1;
-                font: 1em $text_font;
-            }
-
+            height:100%;
             .tab-wrapper {
                 background-color: $tab-color;
                 border-top: 1px solid $inactive-color;
@@ -37,19 +29,35 @@
         }
 
         li.current {
-            .editor {
-                display: block;
-              
-                z-index: 2;
-                width: 100%;
-                height:100%;
-                overflow: auto;
-            }
 
             .tab-wrapper {
                 background-color: $search;
                 border-top: 1px solid $tab-border;
             }
+        }
+      }
+      ul#tabs-editor{
+        height:95%;
+      width:100%;
+      list-style:none;
+      display:flex;
+      li{
+        height:100%;
+        width:100%;
+        display:none;
+        z-index: 1;
+      .editor {
+          font: 1em $text_font;
+        }
+      }
+        li.current{
+          display:block;
+          z-index: 2;
+          .editor {
+            width: 100%;
+            height:100%;
+          }
+
         }
     }
 }
