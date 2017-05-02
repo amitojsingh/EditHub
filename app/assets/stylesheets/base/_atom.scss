@@ -84,3 +84,15 @@ a.link {
     width: 100%;
     background-color: #131313;
 }
+.traversal{
+  z-index:2;
+}
+
+#res-tab{
+  display:none;
+  width:100%;
+  border:none;
+  background-color:$editor;
+  height:5%;
+  color:$silver;
+}

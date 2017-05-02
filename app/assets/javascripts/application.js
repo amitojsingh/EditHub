@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require ace-rails-ap
 //= require ace/ext-modelist.js
-//=require ace/theme-twilight
+//= require ace/theme-twilight
+//= require fuse
 //= require_tree .

@@ -15,49 +15,64 @@
 
 .pannels {
     ul#tabs {
-        height:5%;
+        height: 5%;
         display: flex;
         list-style: none;
 
         li {
             width: 100%;
-            height:100%;
+            height: 100%;
+            z-index:1;
+
             .tab-wrapper {
                 background-color: $tab-color;
                 border-top: 1px solid $inactive-color;
+
             }
         }
 
         li.current {
-
+          z-index:2;
             .tab-wrapper {
                 background-color: $search;
                 border-top: 1px solid $tab-border;
             }
         }
-      }
-      ul#tabs-editor{
-        height:95%;
-      width:100%;
-      list-style:none;
-      display:flex;
-      li{
-        height:100%;
-        width:100%;
-        display:none;
-        z-index: 1;
-      .editor {
-          font: 1em $text_font;
-        }
-      }
-        li.current{
-          display:block;
-          z-index: 2;
-          .editor {
-            width: 100%;
-            height:100%;
-          }
+    }
 
+    ul#tabs-editor {
+        height: 95%;
+        width: 100%;
+        list-style: none;
+        display: flex;
+
+        li {
+            height: 100%;
+            width: 100%;
+            display: none;
+            z-index: 1;
+
+            .editor {
+                font: 1em $text_font;
+            }
+        }
+
+        li.current {
+            display: block;
+            z-index: 2;
+
+            .editor {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
+}
+
+.traversal{
+  .search-result{
+    .link{
+      display:block;
+    }
+  }
 }

@@ -1,13 +1,12 @@
+<button type=button id="menu-list">click</button>
 <div class=wrapper>
-    <input type="checkbox" id="menu-list">
-    <label for="menu-list" onclick></label>
     <div class=traversal>
-        <input type="checkbox" id="remove">
-        <label for="remove" onclick>x</label>
         <input type="textbox" class="search">
+        <div class="search-result"> </div>
         <%=raw traversal%>
     </div>
     <div class=pannels>
+      <select id = 'res-tab'> </select>
         <ul id="tabs"></ul>
         <ul id="tabs-editor"></ul>
     </div>
