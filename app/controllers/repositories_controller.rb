@@ -41,6 +41,15 @@ class RepositoriesController < ApplicationController
     generate_repo
   end
 
+  def moveto
+    goto = {}
+    request.path_parameters.each do |key, value|
+      goto[key] = value
+    end
+    path = "/system/repositories/uploads/extract/#{goto[:id]}/#{goto[:upload_file_name]}#{goto[:all]}"
+    redirect_to(path)
+  end
+
   private
 
   def repository_params

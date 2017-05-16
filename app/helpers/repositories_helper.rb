@@ -74,11 +74,11 @@ def rasta(path)
   @y = []
   (0...x.length).each do |i|
     (0...i + 1).each do |j|
-      if !@y[i].nil?
-        @y[i] = "#{@y[i]}/#{x[j]}"
-      else
-        @y[i] = x[j]
-      end
+      @y[i] = if !@y[i].nil?
+                "#{@y[i]}/#{x[j]}"
+              else
+                x[j]
+              end
     end
   end
   return @y
@@ -94,7 +94,11 @@ def callHash(hashtree)
       else
         if (value - [nil]).empty?
           list << "<li class='file' id = #{key}>"
-          list << link_to(key, '#', dataurl: generate_repository_url(name: key), class: "link", rel: key)
+          list << link_to(key, '#',
+                          dataurl: generate_repository_url(name: key),
+                          class: 'link',
+                          rel: key,
+                          datapath: generate_repository_path(name: key))
         else
           list << "<li class='folder'>"
           list << "<span>#{key}</span>"
@@ -103,7 +107,10 @@ def callHash(hashtree)
       list << callArray(value)
     else
       list << "<li class=file id = #{key}>"
-      list << link_to(key, '#', dataurl: generate_repository_url(name: key), class: "link", rel: key)
+      list << link_to(key, '#',
+                      dataurl: generate_repository_url(name: key),
+                      class: 'link', rel: key,
+                      datapath: generate_repository_path(name: key))
       list << '</li>'
     end
   end
@@ -120,14 +127,20 @@ def callArray(value)
       else
         sublist << "<li class='file' id= #{v}>"
         if v.include?('/')
-          sublist << link_to(v.split('/').last, '#', dataurl: generate_repository_url(name: v), class: "link", rel: v)
+          sublist << link_to(v.split('/').last, '#',
+                             dataurl: generate_repository_url(name: v),
+                             class: 'link', rel: v,
+                             datapath: generate_repository_path(name: v))
           sublist << '</li>'
         else
-          sublist << link_to(v, '#', dataurl: generate_repository_url(name: v), class: "link", rel: v)
+          sublist << link_to(v, '#',
+                             dataurl: generate_repository_url(name: v),
+                             class: 'link', rel: v,
+                             datapath: generate_repository_path(name: v))
         end
       end
     end
   end
-  sublist << '</ul></li>'
+  sublist << '</ul> </li>'
   return sublist
 end

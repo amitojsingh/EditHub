@@ -27,12 +27,18 @@ function addTab(link) {
         success: function(data) {
             console.log(data);
             editor.setValue(data);
+            $datacontent=data;
         },
         error: function(xhr, status, error) {
             console.log(status);
             console.log(error);
         }
     });
+    console.log($(link).attr('rel'));
+    var a="<%=Dir.pwd%>";
+    a= a.replace("home/sifat/directory/public/system/repositories/","")
+    console.log("a="+a);
+    $(".compile").attr('href',a+"/"+$(link).attr('rel'));
     $(function() {
         $('#res-tab').on('change', function() {
             var current = $(this).find(':selected').text();
