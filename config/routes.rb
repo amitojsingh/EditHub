@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post 'gitrepos/newrepo'
   get 'gitrepos/:id', to: 'gitrepos#show', as: 'gitrepo'
   post 'gitrepos', to: 'gitrepos#create'
+  get 'github/:id/:url(*all)', to: 'gitrepos#moveto'
   devise_for :users, controllers: { registrations: 'registrations' }
   get 'repositories/new'
   get 'repositories/:id', to: 'repositories#show', as: 'repository'

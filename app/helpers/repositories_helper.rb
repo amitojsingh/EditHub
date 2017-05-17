@@ -58,7 +58,7 @@ def traversal
     end
   end
   puts @final_tree
-  @html << '<ul>'
+  @html << "<ul class=root-list datapath=#{Dir.pwd}>"
   if @final_tree.is_a?(Hash)
     mainlist = callHash(@final_tree)
     puts "mainlist----#{mainlist}"

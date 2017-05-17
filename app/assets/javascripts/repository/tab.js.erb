@@ -15,8 +15,17 @@ function addTab(link) {
     var path = $(link).attr("rel");
     var modelist = ace.require("ace/ext/modelist");
     var mode = modelist.getModeForPath(path).mode;
+    $(".current").attr('mode',mode);
     console.log(mode);
     editor.session.setMode(mode);
+    if (mode=="ace/mode/html")
+    {
+      assign($(link).attr('rel'));
+    }
+    else{
+      $(".actions").show();
+      $(".compile").hide();
+    }
     editor.setTheme('ace/theme/twilight');
     console.log(path);
     console.log(url);
@@ -34,11 +43,7 @@ function addTab(link) {
             console.log(error);
         }
     });
-    console.log($(link).attr('rel'));
-    var a="<%=Dir.pwd%>";
-    a= a.replace("home/sifat/directory/public/system/repositories/","")
-    console.log("a="+a);
-    $(".compile").attr('href',a+"/"+$(link).attr('rel'));
+
     $(function() {
         $('#res-tab').on('change', function() {
             var current = $(this).find(':selected').text();
@@ -53,6 +58,13 @@ function addTab(link) {
             $('#tabs-editor li').each(function() {
                 if ($(this).attr('id') == current) {
                     $(this).addClass("current");
+                    if($(this).attr('mode')=='ace/mode/html'){
+                      assign(current);
+                    }
+                    else{
+                      $(".actions").show();
+                      $(".compile").hide();
+                    }
                 }
             });
             console.log(current);
@@ -68,6 +80,14 @@ function addTab(link) {
                 console.log($(this).attr('id'));
                 if ($(this).attr('id') == $(current).attr('id')) {
                     $(this).addClass("current");
+                    if($(this).attr('mode')=='ace/mode/html'){
+                      assign($(current).attr('id'));
+
+                    }
+                    else{
+                      $(".actions").show();
+                      $(".compile").hide();
+                    }
                 }
             });
         });
@@ -94,4 +114,13 @@ function addTab(link) {
             });
         });
     });
+}
+function assign(current){
+  console.log("current="+current);
+  $(".actions").show();
+  $(".compile").show();
+  var a=$(".root-list").attr('datapath');
+  a= a.replace("home/sifat/directory/public/system/repositories/","")
+  console.log("a="+a);
+  $(".compile").attr('href',a+"/"+current);
 }

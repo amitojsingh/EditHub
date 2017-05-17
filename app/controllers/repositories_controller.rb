@@ -6,6 +6,8 @@ class RepositoriesController < ApplicationController
   end
 
   def index
+    Dir.chdir(Rails.root)
+    puts "present directory=#{Dir.pwd}"
     @repository = Repository.all
     @gitrepo =  Gitrepo.all
   end
@@ -72,6 +74,7 @@ class RepositoriesController < ApplicationController
     path = "public/system/repositories/uploads/extract/#{@repository.id}"
     @path = Rails.root.join(path, @folder)
     Dir.chdir(@path)
+    puts "after click= #{Dir.pwd}"
     @file = Dir.glob('**/*')
   end
 

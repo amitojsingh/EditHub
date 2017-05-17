@@ -17,6 +17,15 @@ class GitreposController < ApplicationController
     @file = Dir.glob('**/*')
   end
 
+  def moveto
+    goto = {}
+    request.path_parameters.each do |key, value|
+      goto[key] = value
+    end
+    path = "/system/repositories/github/#{goto[:id]}/#{goto[:url]}#{goto[:all]}"
+    redirect_to(path)
+  end
+
   private
 
   def gitrepo_params

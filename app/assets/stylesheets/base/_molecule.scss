@@ -1,5 +1,4 @@
 @import "variable.scss";
-
 .traversal {
     ul {
         a,
@@ -39,9 +38,16 @@
             }
         }
     }
+    .editor-wrapper{
+      height:95%;
+      width:100%;
+      .actions{
+        height:5%;
+      }
+    }
 
     ul#tabs-editor {
-        height: 95%;
+      height:inherit;
         width: 100%;
         list-style: none;
         display: flex;

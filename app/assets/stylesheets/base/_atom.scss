@@ -96,3 +96,13 @@ a.link {
   height:5%;
   color:$silver;
 }
+
+.actions{
+  background-color:$bg-actions;
+  display:none;
+  text-align: right;
+}
+.compile{
+  text-decoration: none;
+  color: $silver;
+}
