@@ -15,8 +15,9 @@ function addTab(link) {
     var path = $(link).attr("rel");
     var modelist = ace.require("ace/ext/modelist");
     var mode = modelist.getModeForPath(path).mode;
+    var EditSession=ace.require("ace/edit_session").EditSession;
+    var Document=ace.require("ace/document").Document;
     $(".current").attr('mode',mode);
-    console.log(mode);
     editor.session.setMode(mode);
     if (mode=="ace/mode/html")
     {
@@ -36,6 +37,9 @@ function addTab(link) {
         success: function(data) {
             console.log(data);
             editor.setValue(data);
+            $tab=new Array();
+            $tab[$(link).attr('rel')]=ace.createEditSession(data,mode);
+            editor.setSession($tab[$(link).attr('rel')]);
             $datacontent=data;
         },
         error: function(xhr, status, error) {
@@ -45,6 +49,26 @@ function addTab(link) {
     });
 
     $(function() {
+      $('.save-button').click(function(){
+        console.log("aah chal pya");
+        var name = "editor-" + $("#tabs-editor> .current").attr("id");
+        var editor=ace.edit(name);
+        var content= editor.getSession().getValue();
+        $.ajax({
+          url: "filedata",
+          type: "post",
+          data: {
+            "file" :$("#tabs-editor> .current").attr("id"),
+            "content" : content
+          },
+          dataType: JSON,
+          success: function(data){
+            alert('successfully');
+          }
+        });
+        console.log("content="+content);
+      });
+
         $('#res-tab').on('change', function() {
             var current = $(this).find(':selected').text();
             $('#tabs li').removeClass("current");

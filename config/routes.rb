@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'repositories', to: 'repositories#create'
   get 'repositories/:id/generate', to: 'repositories#generate', as: 'generate_repository', defaults: {:format=>'json'}
   get 'uploads/extract/:id/:upload_file_name(*all)', to: 'repositories#moveto'
+  #get 'repositories/filedata', to: 'repositories#filedata'
+  post 'repositories/filedata', to: 'repositories#filedata'
 
   devise_scope :user do
     authenticated :user do

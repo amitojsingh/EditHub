@@ -52,6 +52,18 @@ class RepositoriesController < ApplicationController
     redirect_to(path)
   end
 
+  def filedata
+    name = {}
+    request.POST.each do |key, value|
+      name[key] = value
+    end
+    puts name['file']
+    f = File.open(name['file'], 'w')
+    f.write(name['content'])
+    f.close
+
+  end
+
   private
 
   def repository_params
