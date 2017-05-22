@@ -1,6 +1,9 @@
 function addTab(link) {
     $("#tabs li").removeClass("current");
     $("#tabs-editor li").removeClass("current");
+    if (window.innerWidth<='700') {
+      $('#res-tab').css('display','block');
+    }
     $('#tabs').append("<li class=current id = " + $(link).attr('rel') +
         "><div class=tab-wrapper><a class=tab id='" + $(link).attr("rel") +
         "' href='#'>" + $(link).attr('rel') + "</a><a id = '" +

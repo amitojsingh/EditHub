@@ -105,4 +105,12 @@ a.link {
 .compile{
   text-decoration: none;
   color: $silver;
+  background-color:$button-color;
+  padding: 5px;
+}
+.save-button{
+  background-color:$button-color;
+  color:$silver;
+  border-style:none;
+  padding:5px;
 }
