@@ -9,6 +9,7 @@ class GitreposController < ApplicationController
   def create; end
 
   def show
+    @bool=1
     details = @repository.url.split('/').in_groups_of(3, false).second
     reponame = details.second
     path = "public/system/repositories/github/#{@repository.id}"
@@ -37,6 +38,24 @@ class GitreposController < ApplicationController
     f.close
   end
 
+  def pushrepo
+    para = {}
+    request.POST.each do |key, value|
+      para[key] = value
+    end
+    config= Github.new  basic_auth = "#{para['username']}:#{para['password']}",
+                        user = @repouser,
+                        repo = @reponame
+    puts config
+    github = Github::Client::Repos.new
+    newcommit = github.repos"/#{@repouser}/#{@reponame}/git/commits"
+    newcommitsha=newcommit.sha
+    puts "newcommit=#{newcommitsha  }"
+  end
+
+def commitrepo
+  @message= params[:message]
+end
   private
 
   def gitrepo_params
@@ -45,13 +64,17 @@ class GitreposController < ApplicationController
 
   def create_github_repo
     @gitrepo = Gitrepo.new(gitrepo_params)
+    @gitrepo.user = current_user
     return unless @gitrepo.save
     puts 'This is working'
     details = @gitrepo.url.split('/').in_groups_of(3, false).second
-    user = details.first
-    reponame = details.second
-    repo = Github::Client::Repos.new
-    @gitcontent = repo.find user: user, repo: reponame
+    @repouser = details.first
+    @reponame = details.second
+    @repo = Github::Client::Repos.new
+    @gitcontent = @repo.find user: @repouser, repo: @reponame
+    puts %x(
+    git remote add origin https://github.com/#{@repouser}/#{@reponame}.git
+    )
     create_dir
   end
 

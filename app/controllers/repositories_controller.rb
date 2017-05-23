@@ -27,6 +27,7 @@ class RepositoriesController < ApplicationController
   end
 
   def show
+    @bool = 0
     @repository = Repository.find(params[:id])
     if @repository.user == current_user
       show_repo

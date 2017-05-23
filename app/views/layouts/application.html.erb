@@ -11,9 +11,14 @@
 
   <body>
     <header>
+      <div class=header-wrapper>
+        <% if @bool == 1%>
+        <button type=button id=pushButton>Push</button>
+        <%end%>
     <% if user_signed_in?%>
     <%=link_to "Signout",destroy_user_session_path, method: :delete, class: "signout"%>
     <%end%>
+  </div>
   </header>
     <%= yield %>
   </body>

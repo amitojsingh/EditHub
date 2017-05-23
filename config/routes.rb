@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'gitrepos/:id', to: 'gitrepos#show', as: 'gitrepo'
   post 'gitrepos', to: 'gitrepos#create'
   post 'gitrepos/filedata', to: 'gitrepos#filedata'
+  post 'gitrepos/pushrepo', to: 'gitrepos#pushrepo', as: 'pushrepo'
   get 'github/:id/:url(*all)', to: 'gitrepos#moveto'
   devise_for :users, controllers: { registrations: 'registrations' }
   get 'repositories/new'

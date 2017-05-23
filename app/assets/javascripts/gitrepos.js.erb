@@ -1,0 +1,26 @@
+$(document).ready(function() {
+  $("#pushButton").click(function(){
+    $(".modal").css('display','flex');
+  });
+  $("#commit-submit").click(function(){
+    $name=$('input[name="commit-message"]').val();
+    $("#auth-box").css('display','block');
+  });
+  $("#auth-submit").click(function(){
+    $username= $('input[name="git-username"]').val();
+    $password= $('input[name="git-password"]').val();
+    $.ajax({
+      url: 'pushrepo',
+      type: "post",
+      data: {
+        "message" :   $name,
+        "username" : $username,
+        "password": $password
+      },
+      dataType: JSON,
+      success: function(data){
+        alert('successfully');
+      }
+    });
+  });
+});
