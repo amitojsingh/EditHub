@@ -9,8 +9,9 @@ $(document).ready(function() {
   $("#auth-submit").click(function(){
     $username= $('input[name="git-username"]').val();
     $password= $('input[name="git-password"]').val();
+    url= $("#auth-submit").attr('datapath')
     $.ajax({
-      url: 'pushrepo',
+      url: url+"/pushrepo",
       type: "post",
       data: {
         "message" :   $name,

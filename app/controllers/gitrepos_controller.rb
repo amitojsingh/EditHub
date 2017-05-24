@@ -39,18 +39,33 @@ class GitreposController < ApplicationController
   end
 
   def pushrepo
+    @gitrepo = Gitrepo.find(params[:id])
+    details = @gitrepo.url.split('/').in_groups_of(3, false).second
+    @repouser = details.first
+    @reponame = details.second
+    @repo = Github::Client::Repos.new
+    puts "repouser=#{@repouser}"
     para = {}
     request.POST.each do |key, value|
       para[key] = value
     end
-    config= Github.new  basic_auth = "#{para['username']}:#{para['password']}",
-                        user = @repouser,
-                        repo = @reponame
-    puts config
+    Github.configure do |c|
+      c.basic_auth = "#{para['username']}:#{para['password']}"
+      c.user       = @repouser
+      c.repo       = @reponame
+    end
     github = Github::Client::Repos.new
-    newcommit = github.repos"/#{@repouser}/#{@reponame}/git/commits"
-    newcommitsha=newcommit.sha
-    puts "newcommit=#{newcommitsha  }"
+    github.branches user: @repouser, repo: @reponame do |branch|
+      puts branch.name
+    end
+    contents = Github::Client::Repos::Contents.new
+    file = contents.find user: @repouser, repo: @reponame, path: "web.c"
+    puts file.sha
+    contents.update @repouser, @reponame, 'web.c',
+    path: 'web.c',
+    message: para['message'],
+    content: "aah chko g",
+    sha: file.sha
   end
 
 def commitrepo
@@ -66,7 +81,6 @@ end
     @gitrepo = Gitrepo.new(gitrepo_params)
     @gitrepo.user = current_user
     return unless @gitrepo.save
-    puts 'This is working'
     details = @gitrepo.url.split('/').in_groups_of(3, false).second
     @repouser = details.first
     @reponame = details.second
