@@ -52,25 +52,7 @@ function addTab(link) {
     });
 
     $(function() {
-      $('.save-button').click(function(){
-        console.log("aah chal pya");
-        var name = "editor-" + $("#tabs-editor> .current").attr("id");
-        var editor=ace.edit(name);
-        var content= editor.getSession().getValue();
-        $.ajax({
-          url: "filedata",
-          type: "post",
-          data: {
-            "file" :$("#tabs-editor> .current").attr("id"),
-            "content" : content
-          },
-          dataType: JSON,
-          success: function(data){
-            alert('successfully');
-          }
-        });
-        console.log("content="+content);
-      });
+      
 
         $('#res-tab').on('change', function() {
             var current = $(this).find(':selected').text();

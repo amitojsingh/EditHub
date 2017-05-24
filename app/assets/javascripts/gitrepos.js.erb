@@ -1,6 +1,11 @@
 $(document).ready(function() {
   $("#pushButton").click(function(){
+    if ($file.length>0){
     $(".modal").css('display','flex');
+  }
+    else{
+      console.log("Save the Document");
+    }
   });
   $("#commit-submit").click(function(){
     $name=$('input[name="commit-message"]').val();
@@ -14,6 +19,7 @@ $(document).ready(function() {
       url: url+"/pushrepo",
       type: "post",
       data: {
+        "files":$file,
         "message" :   $name,
         "username" : $username,
         "password": $password

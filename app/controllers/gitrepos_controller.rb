@@ -54,18 +54,17 @@ class GitreposController < ApplicationController
       c.user       = @repouser
       c.repo       = @reponame
     end
-    github = Github::Client::Repos.new
-    github.branches user: @repouser, repo: @reponame do |branch|
-      puts branch.name
-    end
     contents = Github::Client::Repos::Contents.new
-    file = contents.find user: @repouser, repo: @reponame, path: "web.c"
-    puts file.sha
-    contents.update @repouser, @reponame, 'web.c',
-    path: 'web.c',
-    message: para['message'],
-    content: "aah chko g",
-    sha: file.sha
+    para['files'].each do |file|
+      filedetails = contents.find user: @repouser, repo: @reponame, path: file
+      puts filedetails.sha
+      filecontent = File.read(file)
+      contents.update @repouser, @reponame, file,
+      path: file,
+      message: para['message'],
+      content: filecontent,
+      sha: filedetails.sha
+    end
   end
 
 def commitrepo

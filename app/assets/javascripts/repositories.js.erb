@@ -1,4 +1,24 @@
   $(document).on('turbolinks:load', function() {
+    $file=[]
+    $('.save-button').click(function(){
+      var name = "editor-" + $("#tabs-editor> .current").attr("id");
+      var editor=ace.edit(name);
+      var content= editor.getSession().getValue();
+      $file.push($("#tabs-editor > .current").attr("id"))
+      console.log($file);
+      $.ajax({
+        url: "filedata",
+        type: "post",
+        data: {
+          "file" :$("#tabs-editor> .current").attr("id"),
+          "content" : content
+        },
+        dataType: JSON,
+        success: function(data){
+          alert('successfully');
+        }
+      });
+    });
         $("#menu-list").click(function() {
             $(".traversal").show();
             $(".pannels").hide();
