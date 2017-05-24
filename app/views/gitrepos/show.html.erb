@@ -2,12 +2,13 @@
   <div class=modal-wrapper>
     <div class=whole-wrapper>
     <div id=message-wrapper>
-        <input type=textbox name="commit-message" placeholder="Enter a Commit message"/>
+      <h1 class= "mess-heading"> Enter a Commit Message here..</h1>
+        <input type=textbox name="commit-message" placeholder="Commit Message" class="input-message"/>
         <input type="submit" id="commit-submit"/>
     </div>
     <div id=auth-box>
-        <input type=textbox name="git-username" placeholder="Username"/>
-        <input type=password name="git-password" placeholder= "Password"/>
+        <input type=textbox name="git-username" placeholder="Username" class="auth-user"/>
+        <input type=password name="git-password" placeholder= "Password" class="auth-password"/>
         <input type=submit id="auth-submit" datapath= <%=gitrepo_path%> />
     </div>
   </div>

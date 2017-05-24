@@ -6,7 +6,7 @@
     justify-content: center;
     flex-direction: column;
     position: fixed;
-    z-index: 1;
+    z-index: 6;
     //padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -17,9 +17,14 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modal-wrapper{
-  background-color:$background-wrapper;
+  background-color:$midnight_blue;
   margin-left:auto;
   margin-right:auto;
+  border:0.5em solid $dialoge-border;
+}
+.mess-heading{
+  font-family: $root-font;
+  color:#fff;
 }
 
 #auth-box{
@@ -28,10 +33,18 @@
 .whole-wrapper{
   margin:4em;
 }
-input[type="textbox"],input[type="password"]{
-  width:18em;
-  height:2em;
-  display:block;
+.input-message{
+  height:2.5em;
+  width:70%;
+  font-size:18px;
+}
+#commit-submit,#auth-submit{
+  border:none;
+  background-color: #27ae60;
+  color:#fff;
+  font-size:18px;
+  height:3em;
+  width:25%
 }
 #pushButton{
   padding:0.5em;
@@ -45,4 +58,11 @@ header{
   display:flex;
   justify-content: center;
   flex-direction: column;
+}
+.auth-user,.auth-password{
+  display:block;
+  width:100%;
+  height:2em;
+  font-size:18px;
+  line-height: 1.5;
 }

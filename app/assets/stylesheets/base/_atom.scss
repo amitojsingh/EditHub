@@ -24,7 +24,6 @@ a.tab {
 a.link {
     color: $silver;
 }
-
 a.remove,
 a.signout {
     color: $silver;
@@ -70,9 +69,17 @@ label {
 }
 
 .search {
+    width:100%;
     background-color: $search;
     border: none;
     color: $silver;
+    background-image:url("search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 5px solid #333333;
+}
+.search:focus{
+  background-image: none;
 }
 
 .folder,
@@ -87,7 +94,9 @@ a.link {
 .traversal{
   z-index:2;
 }
-
+.pannels{
+  background-color: $back-pannel;
+}
 #res-tab{
   display:none;
   width:100%;
@@ -113,4 +122,23 @@ a.link {
   color:$silver;
   border-style:none;
   padding:5px;
+}
+
+.root-text{
+  color:#3f4748;
+  margin:0.5em;
+  font-family:$root-font;
+  font-size: 18px;
+}
+.menu-wrapper{
+  background-color:$back-pannel;
+}
+#menu-list{
+  height:3em;
+  width:3em;
+  border:none;
+  background-color:$back-pannel;
+  background-image:url("menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }

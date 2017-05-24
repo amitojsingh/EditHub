@@ -1,7 +1,9 @@
 @import url( 'https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url( 'https://fonts.googleapis.com/css?family=Rokkitt');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 $text_font: monospace;
 $font: 'Source Sans Pro', sans-serif;
+$root-font: 'Noto Serif', Serif;
 $color: #2c3e50;
 $tab-color: #1f1f1f;
 $midnight_blue: #000;
@@ -17,3 +19,5 @@ $hover-color: #131313;
 $bg-actions:#1a1c1d;
 $button-color:#2f3031;
 $background-wrapper:#fff;
+$back-pannel:#141414;
+$dialoge-border:#2980b9;

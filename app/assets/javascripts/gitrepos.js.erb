@@ -9,6 +9,7 @@ $(document).ready(function() {
   });
   $("#commit-submit").click(function(){
     $name=$('input[name="commit-message"]').val();
+    $("#message-wrapper").css('display','none');
     $("#auth-box").css('display','block');
   });
   $("#auth-submit").click(function(){
