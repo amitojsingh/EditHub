@@ -7,6 +7,10 @@
         <input type="submit" id="commit-submit"/>
     </div>
     <div id=auth-box>
+      <div class="github-wrapper">
+      <%=image_tag("github.png", class: "git-image")%>
+      <h1 class="github-text">Github</h1>
+    </div>
         <input type=textbox name="git-username" placeholder="Username" class="auth-user"/>
         <input type=password name="git-password" placeholder= "Password" class="auth-password"/>
         <input type=submit id="auth-submit" datapath= <%=gitrepo_path%> />

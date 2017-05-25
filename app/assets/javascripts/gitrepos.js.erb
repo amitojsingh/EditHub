@@ -15,7 +15,7 @@ $(document).ready(function() {
   $("#auth-submit").click(function(){
     $username= $('input[name="git-username"]').val();
     $password= $('input[name="git-password"]').val();
-    url= $("#auth-submit").attr('datapath')
+    url= $("#auth-submit").attr('datapath');
     $.ajax({
       url: url+"/pushrepo",
       type: "post",
@@ -30,5 +30,6 @@ $(document).ready(function() {
         alert('successfully');
       }
     });
+    $("#modal-box").css("display",'none');
   });
 });

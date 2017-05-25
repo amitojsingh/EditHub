@@ -44,7 +44,12 @@
   color:#fff;
   font-size:18px;
   height:3em;
-  width:25%
+}
+#auth-submit{
+  width:15em;
+}
+#commit-submit{
+  width:25%;
 }
 #pushButton{
   padding:0.5em;
@@ -61,8 +66,17 @@ header{
 }
 .auth-user,.auth-password{
   display:block;
-  width:100%;
+  width:15em;
   height:2em;
   font-size:18px;
-  line-height: 1.5;
+  margin-bottom: 1em;
+}
+.git-image{
+  width:100px;
+}
+.github-wrapper{
+  text-align:center;
+}
+.github-text{
+  color:$silver;
 }
