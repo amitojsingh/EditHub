@@ -1,13 +1,25 @@
-<%= flash[:alert] %>
-<%=link_to "upload",repositories_new_path%>
+<div class=main-wrapper>
+  <div class=wrapper-upload>
+    <div class=upload-file>
+        <%=link_to "upload",repositories_new_path%>
+    </div>
+    <div class=explore-wrapper>
+      <p class=explore-text>Explore Project</p>
+    </div>
+  </div>
+    <%@repository.each do |d|%>
+    <%if d.user_id==current_user.id%>
+    <div class=repo-wrapper>
+        <%=link_to d.upload_file_name, repository_path(d), class: "filename"%>
+    </div>
+    <%end%>
+    <%end%>
 
-<%@repository.each do |d|%>
-<%if d.user_id==current_user.id%>
-<%=link_to d.upload_file_name, repository_path(d)%>
-<%end%>
-<%end%>
+    <%@gitrepo.each do |repo|%>
+    <%reponame=repo.url.split('/').last%>
+    <div class=repo-wrapper>
+        <%=link_to reponame,gitrepo_path(repo),class: "filename"%>
+    </div>
+    <%end%>
 
-<%@gitrepo.each do |repo|%>
-<%reponame=repo.url.split('/').last%>
-<%=link_to reponame,gitrepo_path(repo)%>
-<%end%>
+</div>

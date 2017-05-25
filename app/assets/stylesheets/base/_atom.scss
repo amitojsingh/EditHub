@@ -1,5 +1,8 @@
 @import "variable.scss";
 
+body{
+  background-color: $back-pannel;
+}
 .folder,
 .folder_up {
     list-style-image: url("folder.png");
@@ -141,4 +144,30 @@ a.link {
   background-image:url("menu.png");
   background-repeat: no-repeat;
   background-position: center;
+}
+.heading-text{
+  color:#fff;
+  font-family: $root-font;
+}
+.explore-text{
+  color:#fff;
+  font-family: $root-font;
+  font-size:3em;
+}
+.main-wrapper{
+  width:80%;
+  margin-left:5em;
+  height:90%;
+}
+.repo-wrapper{
+  width:100%;
+  height: 10%;
+  background: $trav;
+  padding:2em;
+}
+
+.filename{
+  color:$silver;
+  font-size:2.5em;
+  text-decoration: none;
 }
