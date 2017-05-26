@@ -27,7 +27,7 @@ function addTab(link) {
       assign($(link).attr('rel'));
     }
     else{
-      $(".actions").show();
+      $(".file-actions").show();
       $(".compile").hide();
     }
     editor.setTheme('ace/theme/twilight');
@@ -52,7 +52,7 @@ function addTab(link) {
     });
 
     $(function() {
-      
+
 
         $('#res-tab').on('change', function() {
             var current = $(this).find(':selected').text();
@@ -71,7 +71,7 @@ function addTab(link) {
                       assign(current);
                     }
                     else{
-                      $(".actions").show();
+                      $(".file-actions").show();
                       $(".compile").hide();
                     }
                 }
@@ -94,7 +94,7 @@ function addTab(link) {
 
                     }
                     else{
-                      $(".actions").show();
+                      $(".file-actions").show();
                       $(".compile").hide();
                     }
                 }
@@ -126,7 +126,7 @@ function addTab(link) {
 }
 function assign(current){
   console.log("current="+current);
-  $(".actions").show();
+  $(".file-actions").show();
   $(".compile").show();
   var a=$(".root-list").attr('datapath');
   a= a.replace("home/sifat/directory/public/system/repositories/","")

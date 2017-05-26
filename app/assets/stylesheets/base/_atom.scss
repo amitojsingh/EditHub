@@ -30,7 +30,7 @@ a.link {
 a.remove,
 a.signout {
     color: $silver;
-    font-size: 1em;
+    font-size: 22px;
 }
 
 a.tab {
@@ -109,7 +109,7 @@ a.link {
   color:$silver;
 }
 
-.actions{
+.file-actions{
   background-color:$bg-actions;
   display:none;
   text-align: right;
@@ -152,7 +152,7 @@ a.link {
 .explore-text{
   color:#fff;
   font-family: $root-font;
-  font-size:3em;
+  font-size:2em;
 }
 .main-wrapper{
   width:80%;
@@ -160,14 +160,32 @@ a.link {
   height:90%;
 }
 .repo-wrapper{
-  width:100%;
-  height: 10%;
+  height: 5%;
   background: $trav;
   padding:2em;
+  margin:1em;
+  border:3px solid $midnight_blue;
 }
 
 .filename{
   color:$silver;
-  font-size:2.5em;
+  font-size:1.5em;
   text-decoration: none;
+}
+
+.home-menu{
+  color:$silver;
+  font-size:22px;
+  text-decoration: none;
+  margin:20px;
+}
+.heading-upload{
+  color:#fff;
+  font-size:2em;
+  font-style:$root-font;
+}
+#repository_upload{
+  width:20em;
+  height:2em;
+  background-color:$silver;
 }

@@ -41,7 +41,7 @@
     .editor-wrapper{
       height:95%;
       width:100%;
-      .actions{
+      .file-actions{
         height:5%;
       }
     }
@@ -84,13 +84,53 @@
 }
 
 .wrapper-upload{
-  clear:both;
+  display:flex;
+  flex-direction: row-reverse;
   .upload-file{
+    align-self: center;
     width:50%;
-    float:right;
   }
   .explore-wrapper{
     width:50%;
   }
 
+}
+header{
+  display:inline-flex;
+  .heading{
+    height:100%;
+    width:50%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    .heading-text{
+      font-family: $root-font;
+      font-size:2em;
+    }
+  }
+  .header-wrapper{
+    text-align: right;
+    width:45%;
+    height:100%;
+    a{
+      vertical-align: middle;
+    }
+  }
+}
+.upload-file{
+  text-align: right;
+  .upload-button{
+    background: $upload;
+    padding:0.5em;
+    font-size:1.5em;
+    text-decoration: none;
+    color:#fff;
+  }
+}
+.upload-container{
+  height:80%;
+  margin-left:5em;
+  .container-wrapper{
+    width:60%;
+  }
 }

@@ -1,6 +1,12 @@
-<h1>Repositories#new</h1>
+<div class="upload-container">
+  <div class="container-wrapper">
+<h1 class="heading-upload">Upload Repository</h1>
+  <div class="upload-wrapper">
 <%= form_for @repository, html: { multipart: true } do |form| %>
 <%= form.file_field :upload, name: "upload" %>
 <%= form.submit %>
 <%end%>
-<%= button_to "Github",gitrepos_newrepo_path%>
+</div>
+<%= button_to "Github",gitrepos_newrepo_path,class:"github-button"%>
+</div>
+</div>

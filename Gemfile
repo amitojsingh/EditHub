@@ -47,6 +47,8 @@ gem 'zip-zip'
 # Github API
 gem 'github_api'
 
+gem 'omniauth-github'
+
 # Use for the editor ace
 gem 'ace-rails-ap'
 

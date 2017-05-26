@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post 'gitrepos/filedata', to: 'gitrepos#filedata'
   post 'gitrepos/:id/pushrepo', to: 'gitrepos#pushrepo', as: 'pushrepo'
   get 'github/:id/:url(*all)', to: 'gitrepos#moveto'
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations',
+                                    omniauth_callbacks: 'users/omniauth_callbacks'}
   get 'repositories/new'
   get 'repositories/:id', to: 'repositories#show', as: 'repository'
   get 'repositories', to: 'repositories#index', as: 'repositories_index'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   post 'repositories/filedata', to: 'repositories#filedata'
 
   devise_scope :user do
+    
     authenticated :user do
       root 'repositories#index', as: :authenticated_root
     end
