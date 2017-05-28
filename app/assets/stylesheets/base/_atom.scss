@@ -1,8 +1,5 @@
 @import "variable.scss";
 
-body{
-  background-color: $back-pannel;
-}
 .folder,
 .folder_up {
     list-style-image: url("folder.png");
@@ -164,7 +161,7 @@ a.link {
   background: $trav;
   padding:2em;
   margin:1em;
-  border:3px solid $midnight_blue;
+  border:3px solid $silver;
 }
 
 .filename{
@@ -188,4 +185,12 @@ a.link {
   width:20em;
   height:2em;
   background-color:$silver;
+}
+.fac,.vac{
+  font-family:$ornate-font;
+  color:#27ae60;
+  font-size:30px;
+}
+.vac{
+  color:#3498db;
 }

@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%- if controller_name != 'sessions'%>
     <header>
       <div class=heading>
         <p class=heading-text>Github Editor</p>
@@ -24,6 +25,7 @@
     <%end%>
   </div>
   </header>
+  <%end%>
     <%= yield %>
   </body>
 </html>
