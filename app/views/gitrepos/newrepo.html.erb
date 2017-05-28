@@ -1,7 +1,10 @@
-<h1>Gitrepos#newrepo</h1>
-<p>Find me in app/views/gitrepos/newrepo.html.erb</p>
-<%=form_for @gitrepo do |form|%>
+<div class=git-wrapper>
+  <div class=git-box>
+  <h1>Upload via Github</h1>
+<%=form_for @gitrepo, class: "url-form" do |form|%>
 <%=form.label "Paste your github link here"%>
-<%=form.text_field :url%>
-<%=form.submit%>
+<%=form.text_field :url, class:"url-field", placeholder: "Place your Github link here"%>
+<%=form.submit class:"url-submit"%>
 <%end%>
+</div>
+</div>

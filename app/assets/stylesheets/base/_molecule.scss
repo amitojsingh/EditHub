@@ -127,13 +127,17 @@ header{
     color:#fff;
   }
 }
-.upload-container{
-  height:80%;
-  margin-left:5em;
   .container-wrapper{
     width:60%;
+    padding:2%;
+    h1{
+      margin:0;
+    }
+    .upload-wrapper{
+      margin-top:2%;
+      margin-bottom:2%;
+    }
   }
-}
 .body-wrapper{
   position: fixed;
   width:100%;
@@ -141,7 +145,7 @@ header{
   background:url('code.png') no-repeat center center;
   background-size:65%;
   .body-color{
-    background-color: rgba(63,71,72,0.9);
+    background-color: $box;
     width:100%;
     height:100%;
   }
@@ -154,12 +158,7 @@ header{
 
 }
 .login-wrapper{
-  #user_email,#user_password,.submit-button{
-    width:15em;
-    font-size:18px;
-    height:2em;
-    border:none;
-  }
+
   .login-text{
     font-family:$root-font;
     font-size:30px;
@@ -189,7 +188,7 @@ header{
 
   }
   h1{
-    margin-left:0.5em;
+    margin-left:1.5em;
     font-family: $main-font;
     font-size:55px;
     color:$landing;
@@ -200,4 +199,46 @@ header{
   width:100%;
   height:100%;
   background-color:$back-pannel;
+}
+.signup-wrapper{
+  width:100%;
+  height:100%;
+  background:url('stardust.png') no-repeat center center fixed;
+  background-size:cover;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  .signup-box{
+    width:40%;
+    height:60%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:rgba(255,255,255,0.7);
+    .signup-subox{
+      margin:10%;
+    h2{
+      margin:0;
+    }
+    .user-email,.user-password{
+      width:95%;
+      height:0.5em;
+      text-indent:1em;
+    }
+    .signup-button{
+      width:95%;
+      height:2em;
+      background-color:$green;
+      color:#fff;
+      font-size:1em;
+      border:none
+    }
+  }
+}}
+
+.user-pass-confirm{
+  width:95%;
+  height:2.5em;
+  text-indent:10px;
+  margin-top:1em;
+  margin-bottom: 2em;
 }

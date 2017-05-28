@@ -182,9 +182,10 @@ a.link {
   font-style:$root-font;
 }
 #repository_upload{
-  width:20em;
-  height:2em;
-  background-color:$silver;
+  width:50%;
+  background-color:$trav;
+  color:$silver;
+  font-size: 1em;
 }
 .fac,.vac{
   font-family:$ornate-font;
@@ -193,4 +194,19 @@ a.link {
 }
 .vac{
   color:#3498db;
+}
+
+#user_email,#user_password,.submit-button{
+  width:95%;
+  font-size:18px;
+  height:2em;
+  border:none;
+  text-indent:1em;
+}
+.upload-submit{
+  background-color:$green;
+  color:#fff;
+  border:none;
+  width:20%;
+  font-size:1.2em;
 }

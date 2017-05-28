@@ -83,3 +83,40 @@ header {
     }
   }
 }
+.upload-box{
+  width:100%;
+  height:90%;
+  background-color:$back-pannel;
+}
+.git-wrapper{
+  width:100%;
+  height:90%;
+  background-color:$back-pannel;
+  h1{
+    margin:0;
+  }
+  .git-box{
+    width:50%;
+    height:50%;
+    color:$silver;
+    font-family:$root-font;
+    padding:2%;
+    .new_gitrepo{
+      margin-top:1em;
+      width:100%;
+      height:100%;
+    .url-field,{
+      width:40%;
+      height:10%;
+      text-indent: 10px;
+    }
+    .url-submit{
+      width:30%;
+      height:12%;
+      background-color:$green;
+      color:#fff;
+      border:none;
+    }
+  }
+  }
+}
