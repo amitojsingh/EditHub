@@ -98,6 +98,7 @@
 header{
   display:inline-flex;
   .heading{
+    margin-left:2em;
     height:100%;
     width:50%;
     display:flex;
@@ -112,6 +113,7 @@ header{
     text-align: right;
     width:45%;
     height:100%;
+    margin-top:0.3em;
     a{
       vertical-align: middle;
     }
@@ -128,21 +130,25 @@ header{
   }
 }
   .container-wrapper{
-    width:60%;
-    padding:2%;
+    width:100%;
+    height:100%;
     h1{
       margin:0;
     }
     .upload-wrapper{
-      margin-top:2%;
-      margin-bottom:2%;
+      height:10%;
+      .upload-input{
+        width:14%;
+        color:#fff;
+        font-size:1em;
+        padding:2em;
+      }
     }
   }
 .body-wrapper{
   position: fixed;
   width:100%;
   height:100%;
-  background:url('code.png') no-repeat center center;
   background-size:65%;
   .body-color{
     background-color: $box;
@@ -177,21 +183,26 @@ header{
     margin:5em;
     .heading{
         font-family:$root-font;
-        font-size:40px;
+        font-size:50px;
         color:#fff;
     }
     .content{
+      border:4px solid #fff;
+      padding:1em;
+      background:#000;
+      border-radius:1em;
       font-family:$root-font;
-      font-size:25px;
+      font-size:30px;
       color:$silver;
     }
 
   }
   h1{
-    margin-left:1.5em;
-    font-family: $main-font;
-    font-size:55px;
-    color:$landing;
+    margin-left:1em;
+    font-family: $head-font;
+    font-size:70px;
+    color:#fff;
+    font-weight:normal
 }
 
 }
@@ -203,8 +214,6 @@ header{
 .signup-wrapper{
   width:100%;
   height:100%;
-  background:url('stardust.png') no-repeat center center fixed;
-  background-size:cover;
   display:flex;
   justify-content: center;
   flex-direction: column;
@@ -241,4 +250,25 @@ header{
   text-indent:10px;
   margin-top:1em;
   margin-bottom: 2em;
+}
+.forgot-wrapper{
+  width:100%;
+  height:100%;
+  .forgot-box{
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    h2{
+      font-family:$root-font;
+      color:$silver;
+    }
+    .action-box{
+      .forgot-submit{
+        margin-top:1em;
+        border:none;
+        padding:1em;
+        border-radius:0.5em;
+      }
+    }
+  }
 }

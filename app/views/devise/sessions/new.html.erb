@@ -2,10 +2,10 @@
       <div class=body-box>
                 <div class="login-box">
                   <div class=landing-content>
-                    <h1> GitHub Editor </h1>
+                    <h1> Edit<span class="hub">Hub</span></h1>
                     <div class=main-intro>
                     <p class=heading> Built for Developers</p>
-                    <p class=content> Github Editor is a <span class=fac>facinating</span>, <span class=vac> Vivacious</span> developer
+                    <p class=content> Github Editor is a <span class=fac>fascinating</span>, <span class=vac> vivacious</span> developer
                       friendly editor. Inspired by the way you work,
                       You can fetch, edit, repostiory from GitHub and push back
                       to GitHub.</p>
@@ -13,6 +13,9 @@
                   </div>
                     <div class="login-wrapper">
                       <div class="wrapper-content">
+                        <div class="wrapper-box">
+                        <%=image_tag "github.png", class:"github-image"%>
+                      </div>
                         <p class=login-text>Log in</p>
                         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                         <div class="field email-field">
@@ -27,8 +30,8 @@
 
                         <% if devise_mapping.rememberable? -%>
                         <div class="field">
-                            <%= f.check_box :remember_me %>
-                            <%= f.label :remember_me %>
+                            <%= f.check_box :remember_me, class:"check-remember"%>
+                            <%= f.label :remember_me, class:"remember-me"%>
                         </div>
                         <% end -%>
 

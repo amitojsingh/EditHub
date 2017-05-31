@@ -3,10 +3,10 @@
 <h1 class="heading-upload">Upload Repository</h1>
   <div class="upload-wrapper">
 <%= form_for @repository, html: { multipart: true } do |form| %>
-<%= form.file_field :upload, name: "upload" %>
+<%= form.file_field :upload, name: "upload", Class:"upload-input", id:'upload'%>
 <%= form.submit class:"upload-submit"%>
 <%end%>
 </div>
-<%= button_to "github",gitrepos_newrepo_path,class:"github-button"%>
+<%= button_to "Github".html_safe,gitrepos_newrepo_path,class:"github-button"%>
 </div>
 </div>

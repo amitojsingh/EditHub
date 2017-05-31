@@ -1,3 +1,4 @@
+@import "variable";
 .editor,
 ul#tabs {
     margin: 0;
@@ -29,10 +30,9 @@ ul#tabs {
     }
 }
 .body-box{
-  background:url('stardust.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color:$medium-black;
 }
 
 .github-button{
-  
+
 }
