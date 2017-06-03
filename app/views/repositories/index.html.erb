@@ -17,10 +17,12 @@
     <%end%>
 
     <%@gitrepo.each do |repo|%>
+    <% if repo.user_id==current_user.id%>
     <%reponame=repo.url.split('/').last%>
     <div class=repo-wrapper>
         <%=link_to reponame,gitrepo_path(repo),class: "filename"%>
     </div>
+    <%end%>
     <%end%>
 
 </div>
