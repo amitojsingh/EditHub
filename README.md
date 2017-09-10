@@ -2,7 +2,6 @@
 EditHub is a collaboration of Editor and Github. One can edit their repository online, no need to download the repository. Moreover, After editting one can even push back the whole repository without using any hectic commands just with a single click.
 
 ![EditHub Home](http://drive.google.com/uc?id=0B5ZrPtHpMxO9aGR3dE04bmdsaTQ)
-Format: ![Alt Text](url)
 
 ## Table Of Content
 - [Features](#features)
@@ -50,12 +49,15 @@ One can authenticate either by signing up or with github.
 ### Upload
 After authentication, one can upload or clone repository.
 #### locally
+By using a simple uploader one can upload from local machine.
 ![local](https://drive.google.com/uc?id=0B5ZrPtHpMxO9NldWeTc2MHNBQ2M)
 #### Github
+For Github, on need to paste the url in the space given in the image.
 ![github](https://drive.google.com/uc?id=0B5ZrPtHpMxO9Z25xRHJJRnF6MVU)
 ### Editor
 Later on, One can edit the document and perform all the document operations easily.
 ![editor](https://drive.google.com/uc?id=0B5ZrPtHpMxO9ai01czBMc1Z5TUE)
 ## Links
 blog: [Amitoj singh](https://amitojsworld.wordpress.com)
+
 editor: [Ace](https://ace.c9.io)
