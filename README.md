@@ -1,5 +1,22 @@
 # EditHub
-EditHub is a collaboration of Editor and Github. It is to make to ease developers work. One can edit their repository online, no need to download the repository. Moreover, After editting one can even push back the whole repository without using any hectic commands just with a single click.
+EditHub is a collaboration of Editor and Github. One can edit their repository online, no need to download the repository. Moreover, After editting one can even push back the whole repository without using any hectic commands just with a single click.
+
+![EditHub Home](/screanshorts/1.png)
+Format: ![Alt Text](url)
+
+## Table Of Content
+- [Features](#features)
+- [Installation](#installation)
+  - [Prequesitie](#prequesitie)
+  - [Probing Further](#further)
+- [Working](#working)
+  - [Authentication](#authentication)
+  - [Upload][#upload]
+    - [locally][#locally]
+    - [Github][#github]
+  - [Editor](#editor)
+- [License](#license)
+- [Links](#links)
 
 ## Features
 * Fetch repository from github
@@ -10,27 +27,25 @@ EditHub is a collaboration of Editor and Github. It is to make to ease developer
 * Github Authentication
 * Developer-friendly Editor.
 
-# README
+## Installation
+Some simple steps to install this wonderfull application in Linux but before that,
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Prequesitie
+1. Install Rails version 5.0.0 from <a href= "http://installrails.com/"> here</a>
+### Probing Further
+1. Clone the repository
+```
+$git clone https://github.com/amitojsingh/EditHub
+```
+2. Install Related Gems
+```
+$bundle Install
+```
+## Working
+### Authentication
+### Upload
+#### locally
+#### Github
+### Editor
+## License
+## Links
