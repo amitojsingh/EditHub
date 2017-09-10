@@ -1,7 +1,7 @@
 # EditHub
 EditHub is a collaboration of Editor and Github. One can edit their repository online, no need to download the repository. Moreover, After editting one can even push back the whole repository without using any hectic commands just with a single click.
 
-![EditHub Home](/screanshorts/1.png)
+![EditHub Home](http://drive.google.com/uc?id=0B5ZrPtHpMxO9aGR3dE04bmdsaTQ)
 Format: ![Alt Text](url)
 
 ## Table Of Content
@@ -11,9 +11,9 @@ Format: ![Alt Text](url)
   - [Probing Further](#further)
 - [Working](#working)
   - [Authentication](#authentication)
-  - [Upload][#upload]
-    - [locally][#locally]
-    - [Github][#github]
+  - [Upload](#upload)
+    - [locally](#locally)
+    - [Github](#github)
   - [Editor](#editor)
 - [License](#license)
 - [Links](#links)
