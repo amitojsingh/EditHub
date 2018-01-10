@@ -126,3 +126,16 @@ header {
   }
   }
 }
+
+@media screen and (max-width:55em) {
+
+  .login-box{
+    flex-direction:column;
+    display: contents;
+    .landing-content,.login-wrapper{
+      width:100%;
+      height:100%;
+    }
+  }
+
+}
