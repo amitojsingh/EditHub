@@ -1,0 +1,1980 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+/* line 3, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+body {
+  background-color: #191919;
+}
+
+/* line 6, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder,
+.folder_up {
+  list-style-image: url("folder.png");
+}
+
+/* line 11, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder_down {
+  list-style-image: url("archive.png");
+}
+
+/* line 15, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.file {
+  list-style-image: url("file.png");
+}
+
+/* line 19, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.link,
+a.remove,
+a.signout,
+a.tab {
+  text-decoration: none;
+}
+
+/* line 26, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder,
+a.link {
+  color: #bdc3c7;
+}
+
+/* line 30, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.remove,
+a.signout {
+  color: #bdc3c7;
+  font-size: 22px;
+}
+
+/* line 36, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.tab {
+  font-size: 0.8em;
+  color: #bdc3c7;
+}
+
+/* line 41, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.remove {
+  float: right;
+  font-weight: bold;
+}
+
+/* line 46, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#menu-list,
+#remove {
+  display: none;
+}
+
+/* line 51, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+label {
+  display: none;
+}
+
+/* line 55, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.tab-wrapper {
+  background-color: #1f1f1f;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  min-width: 150px;
+}
+
+/* line 63, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.editor {
+  resize: both;
+  overflow: auto;
+}
+
+/* line 68, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.ace-gutter {
+  background-color: #1d1f20;
+}
+
+/* line 72, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.search {
+  width: 100%;
+  background-color: #171717;
+  border: none;
+  color: #bdc3c7;
+  background-image: url("search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom: 5px solid #333333;
+}
+
+/* line 82, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.search:focus {
+  background-image: none;
+}
+
+/* line 86, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder,
+a.link {
+  font: 1em "Source Sans Pro", sans-serif;
+}
+
+/* line 91, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.file:hover {
+  width: 100%;
+  background-color: #131313;
+}
+
+/* line 95, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.traversal {
+  z-index: 2;
+}
+
+/* line 98, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.pannels {
+  background-color: #141414;
+}
+
+/* line 101, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#res-tab {
+  display: none;
+  width: 100%;
+  border: none;
+  background-color: #1d1f20;
+  height: 5%;
+  color: #bdc3c7;
+}
+
+/* line 110, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.file-actions {
+  background-color: #1a1c1d;
+  display: none;
+  text-align: right;
+}
+
+/* line 115, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.compile {
+  text-decoration: none;
+  color: #bdc3c7;
+  background-color: #2f3031;
+  padding: 5px;
+}
+
+/* line 121, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.save-button {
+  background-color: #2f3031;
+  color: #bdc3c7;
+  border-style: none;
+  padding: 5px;
+}
+
+/* line 128, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.root-text {
+  color: #3f4748;
+  margin: 0.5em;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+}
+
+/* line 134, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.menu-wrapper {
+  background-color: #141414;
+}
+
+/* line 137, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#menu-list {
+  height: 3em;
+  width: 3em;
+  border: none;
+  background-color: #141414;
+  background-image: url("menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 146, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.heading-text {
+  color: #fff;
+  font-family: "Lato", sans-serif;
+}
+
+/* line 150, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.explore-text {
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 2em;
+}
+
+/* line 155, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.main-wrapper {
+  width: 80%;
+  margin-left: 5em;
+  height: 90%;
+}
+
+/* line 160, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.repo-wrapper {
+  height: 5%;
+  background: #282828;
+  padding: 2em;
+  margin: 1em;
+  border: 3px solid #bdc3c7;
+}
+
+/* line 168, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.filename {
+  color: #bdc3c7;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+/* line 174, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.home-menu {
+  color: #bdc3c7;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+}
+
+/* line 180, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.heading-upload {
+  color: #fff;
+  font-size: 2em;
+  font-style: "Lato", sans-serif;
+}
+
+/* line 185, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#repository_upload {
+  width: 50%;
+  background-color: #282828;
+  color: #bdc3c7;
+  font-size: 1em;
+}
+
+/* line 191, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.fac, .vac {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-size: 30px;
+}
+
+/* line 196, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.vac {
+  color: #fff;
+}
+
+/* line 200, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#user_email, #user_password, .submit-button {
+  width: 95%;
+  font-size: 18px;
+  height: 2em;
+  border: none;
+  text-indent: 1em;
+  border-radius: 0.5em;
+  border: 1px solid #bdc3c7;
+}
+
+/* line 209, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.upload-submit {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  width: 12%;
+  font-size: 1.2em;
+  height: 2em;
+}
+
+/* line 217, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.github-image {
+  width: 60%;
+  height: 60%;
+}
+
+/* line 221, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.remember-me {
+  display: inline-block;
+  font-size: 1em;
+}
+
+/* line 226, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.check-remember {
+  zoom: 1.5;
+  margin-top: 1em;
+}
+
+/* line 231, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.hub {
+  background-color: #fff;
+  color: #191919;
+}
+
+/* line 235, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.shared-link {
+  color: #191919;
+}
+
+/* line 238, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.github-button {
+  width: 29%;
+  margin: 2em;
+  padding: 1em;
+  font-size: 1em;
+  border: none;
+  border: 2px solid #ccc;
+  background-color: #191919;
+  color: #bdc3c7;
+}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+/* line 4, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.traversal ul a,
+.traversal ul li {
+  color: #bdc3c7;
+}
+/* line 9, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.traversal ul .list {
+  display: none;
+}
+
+/* line 16, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs {
+  height: 5%;
+  display: flex;
+  list-style: none;
+}
+/* line 21, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/* line 26, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li .tab-wrapper {
+  background-color: #1f1f1f;
+  border-top: 1px solid #0b2833;
+}
+/* line 33, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li.current {
+  z-index: 2;
+}
+/* line 35, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li.current .tab-wrapper {
+  background-color: #171717;
+  border-top: 1px solid #7e6800;
+}
+/* line 41, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels .editor-wrapper {
+  height: 95%;
+  width: 100%;
+}
+/* line 44, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels .editor-wrapper .file-actions {
+  height: 5%;
+}
+/* line 49, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor {
+  height: inherit;
+  width: 100%;
+  list-style: none;
+  display: flex;
+}
+/* line 55, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li {
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 1;
+}
+/* line 61, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li .editor {
+  font: 1em monospace;
+}
+/* line 66, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li.current {
+  display: block;
+  z-index: 2;
+}
+/* line 70, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li.current .editor {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 80, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.traversal .search-result .link {
+  display: block;
+}
+
+/* line 86, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.wrapper-upload {
+  display: flex;
+  flex-direction: row-reverse;
+}
+/* line 89, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.wrapper-upload .upload-file {
+  align-self: center;
+  width: 50%;
+}
+/* line 93, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.wrapper-upload .explore-wrapper {
+  width: 50%;
+}
+
+/* line 98, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header {
+  display: inline-flex;
+}
+/* line 100, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .heading {
+  margin-left: 2em;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 107, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .heading .heading-text {
+  font-family: "Lato", sans-serif;
+  font-size: 2em;
+}
+/* line 112, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .header-wrapper {
+  text-align: right;
+  width: 45%;
+  height: 100%;
+  margin-top: 0.3em;
+}
+/* line 117, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .header-wrapper a {
+  vertical-align: middle;
+}
+
+/* line 122, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.upload-file {
+  text-align: right;
+}
+/* line 124, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.upload-file .upload-button {
+  background: #27ae60;
+  padding: 0.5em;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 132, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* line 135, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper h1 {
+  margin: 0;
+}
+/* line 138, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper .upload-wrapper {
+  height: 10%;
+}
+/* line 140, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper .upload-wrapper .upload-input {
+  width: 14%;
+  color: #fff;
+  font-size: 1em;
+  padding: 2em;
+}
+
+/* line 148, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.body-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-size: 65%;
+}
+/* line 153, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.body-wrapper .body-color {
+  background-color: rgba(63, 71, 72, 0.9);
+  width: 100%;
+  height: 100%;
+}
+
+/* line 159, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+}
+
+/* line 168, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-wrapper .login-text {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+}
+/* line 172, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-wrapper .submit-button {
+  background-color: #2ecc71;
+  color: #fff;
+  height: 3em;
+}
+/* line 177, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-wrapper p {
+  margin: 0;
+}
+
+/* line 182, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content .main-intro {
+  margin: 4em;
+}
+/* line 184, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content .main-intro .heading {
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  color: #fff;
+}
+/* line 189, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content .main-intro .content {
+  border: 4px solid #fff;
+  padding: 1em;
+  background: #000;
+  border-radius: 1em;
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  color: #bdc3c7;
+}
+/* line 200, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content h1 {
+  margin-left: 1em;
+  font-family: "Raleway", sans-serif;
+  font-size: 70px;
+  color: #fff;
+  font-weight: normal;
+}
+
+/* line 209, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.main-body {
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+}
+
+/* line 214, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 220, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box {
+  width: 40%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+/* line 226, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox {
+  margin: 10%;
+}
+/* line 228, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox h2 {
+  margin: 0;
+}
+/* line 231, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox .user-email, .signup-wrapper .signup-box .signup-subox .user-password {
+  width: 95%;
+  height: 0.5em;
+  text-indent: 1em;
+}
+/* line 236, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox .signup-button {
+  width: 95%;
+  height: 2em;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+}
+
+/* line 247, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.user-pass-confirm {
+  width: 95%;
+  height: 2.5em;
+  text-indent: 10px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+/* line 254, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* line 257, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper .forgot-box {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 261, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper .forgot-box h2 {
+  font-family: "Lato", sans-serif;
+  color: #bdc3c7;
+}
+/* line 266, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper .forgot-box .action-box .forgot-submit {
+  margin-top: 1em;
+  border: none;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+/* line 2, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+.editor,
+ul#tabs {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 44em) {
+  /* line 8, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  #menu-list {
+    display: block;
+  }
+
+  /* line 11, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .traversal {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  /* line 16, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels {
+    width: 100%;
+    height: 100%;
+  }
+  /* line 19, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels #res-tab {
+    display: none;
+  }
+  /* line 23, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels #tabs li {
+    display: none;
+  }
+  /* line 26, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels #tabs li.current {
+    display: block;
+  }
+}
+/* line 32, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+.body-box {
+  background-color: #191919;
+}
+/* line 1, /home/sifat/EditHub/app/assets/stylesheets/base/_reset.scss */
+a {
+  outline: 0;
+}
+
+/* line 4, /home/sifat/EditHub/app/assets/stylesheets/base/_reset.scss */
+ul#tabs-editor {
+  margin: 0;
+  padding: 0;
+}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+/* line 3, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* line 11, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+header {
+  width: 100%;
+  height: 10%;
+  background-color: #000;
+  box-sizing: border-box;
+  border-bottom: 0.5em solid #343436;
+}
+
+/* line 19, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.traverse {
+  margin: 0.5em;
+}
+
+/* line 22, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.root-wrapper {
+  border-bottom: 3px solid #333;
+}
+
+/* line 25, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.traversal {
+  width: 25%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  border-right: 1em solid #303030;
+  background-color: #282828;
+  overflow: auto;
+}
+
+/* line 35, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.pannels {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 40, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.editor {
+  width: 100%;
+  height: 70%;
+}
+
+/* line 45, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.wrapper {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+
+/* line 51, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.tab-wrapper {
+  margin: 0;
+}
+
+/* line 55, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.search {
+  width: 99%;
+  height: 2em;
+}
+
+@media screen and (max-width: 44em) {
+  /* line 60, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+  .pannels {
+    min-width: 100%;
+  }
+}
+/* line 64, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.body-box {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 68, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box {
+  box-shadow: inset 1em 1em 2em 0.5em #000;
+  display: flex;
+}
+/* line 71, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .landing-content {
+  width: 50%;
+}
+/* line 74, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .login-wrapper {
+  align-self: center;
+  width: 60%;
+}
+/* line 77, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .login-wrapper .wrapper-content {
+  box-shadow: 1.5em 1em 1em #000;
+  border: 2px solid #fff;
+  width: 40%;
+  padding: 40px;
+  background-color: #ccc;
+  border-radius: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 86, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .login-wrapper .wrapper-content .wrapper-box {
+  text-align: center;
+}
+
+/* line 92, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.upload-box {
+  width: 100%;
+  height: 90%;
+  background-color: #141414;
+}
+
+/* line 97, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper {
+  width: 100%;
+  height: 90%;
+  background-color: #141414;
+}
+/* line 101, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper h1 {
+  margin: 0;
+}
+/* line 104, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box {
+  width: 50%;
+  height: 50%;
+  color: #bdc3c7;
+  font-family: "Lato", sans-serif;
+  padding: 2%;
+}
+/* line 110, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box .new_gitrepo {
+  margin-top: 1em;
+  width: 100%;
+  height: 100%;
+}
+/* line 114, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box .new_gitrepo .url-field {
+  width: 40%;
+  height: 10%;
+  text-indent: 10px;
+}
+/* line 119, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box .new_gitrepo .url-submit {
+  width: 30%;
+  height: 12%;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+}
+
+@media screen and (max-width: 55em) {
+  /* line 132, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+  .login-box {
+    flex-direction: column;
+    display: contents;
+  }
+  /* line 135, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+  .login-box .landing-content, .login-box .login-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+/* line 4, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.modal {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 6;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* line 19, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.modal-wrapper {
+  background-color: #000;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.5em solid #2980b9;
+}
+
+/* line 25, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.mess-heading {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+}
+
+/* line 30, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#auth-box {
+  display: none;
+}
+
+/* line 33, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.whole-wrapper {
+  margin: 4em;
+}
+
+/* line 36, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.input-message {
+  height: 2.5em;
+  width: 70%;
+  font-size: 18px;
+}
+
+/* line 41, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#commit-submit, #auth-submit {
+  border: none;
+  background-color: #27ae60;
+  color: #fff;
+  font-size: 18px;
+  height: 3em;
+}
+
+/* line 48, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#auth-submit {
+  width: 15em;
+}
+
+/* line 51, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#commit-submit {
+  width: 25%;
+}
+
+/* line 54, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#pushButton {
+  padding: 0.5em;
+  background-color: #000;
+  border-style: none;
+  border: 4px solid #282828;
+  color: #bdc3c7;
+  font-size: 1.5em;
+}
+
+/* line 62, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.auth-user, .auth-password {
+  display: block;
+  width: 15em;
+  height: 2em;
+  font-size: 18px;
+  margin-bottom: 1em;
+}
+
+/* line 69, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.git-image {
+  width: 100px;
+}
+
+/* line 72, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.github-wrapper {
+  text-align: center;
+}
+
+/* line 75, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.github-text {
+  color: #bdc3c7;
+}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+/* line 4, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.modal {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 6;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* line 19, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.modal-wrapper {
+  background-color: #000;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.5em solid #2980b9;
+}
+
+/* line 25, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.mess-heading {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+}
+
+/* line 30, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#auth-box {
+  display: none;
+}
+
+/* line 33, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.whole-wrapper {
+  margin: 4em;
+}
+
+/* line 36, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.input-message {
+  height: 2.5em;
+  width: 70%;
+  font-size: 18px;
+}
+
+/* line 41, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#commit-submit, #auth-submit {
+  border: none;
+  background-color: #27ae60;
+  color: #fff;
+  font-size: 18px;
+  height: 3em;
+}
+
+/* line 48, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#auth-submit {
+  width: 15em;
+}
+
+/* line 51, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#commit-submit {
+  width: 25%;
+}
+
+/* line 54, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+#pushButton {
+  padding: 0.5em;
+  background-color: #000;
+  border-style: none;
+  border: 4px solid #282828;
+  color: #bdc3c7;
+  font-size: 1.5em;
+}
+
+/* line 62, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.auth-user, .auth-password {
+  display: block;
+  width: 15em;
+  height: 2em;
+  font-size: 18px;
+  margin-bottom: 1em;
+}
+
+/* line 69, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.git-image {
+  width: 100px;
+}
+
+/* line 72, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.github-wrapper {
+  text-align: center;
+}
+
+/* line 75, /home/sifat/EditHub/app/assets/stylesheets/gitbase/_atom.scss */
+.github-text {
+  color: #bdc3c7;
+}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Lato|Prociono");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+/* line 1, /home/sifat/EditHub/app/assets/stylesheets/base/_reset.scss */
+a {
+  outline: 0;
+}
+
+/* line 4, /home/sifat/EditHub/app/assets/stylesheets/base/_reset.scss */
+ul#tabs-editor {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 3, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+body {
+  background-color: #191919;
+}
+
+/* line 6, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder,
+.folder_up {
+  list-style-image: url("folder.png");
+}
+
+/* line 11, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder_down {
+  list-style-image: url("archive.png");
+}
+
+/* line 15, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.file {
+  list-style-image: url("file.png");
+}
+
+/* line 19, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.link,
+a.remove,
+a.signout,
+a.tab {
+  text-decoration: none;
+}
+
+/* line 26, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder,
+a.link {
+  color: #bdc3c7;
+}
+
+/* line 30, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.remove,
+a.signout {
+  color: #bdc3c7;
+  font-size: 22px;
+}
+
+/* line 36, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.tab {
+  font-size: 0.8em;
+  color: #bdc3c7;
+}
+
+/* line 41, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+a.remove {
+  float: right;
+  font-weight: bold;
+}
+
+/* line 46, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#menu-list,
+#remove {
+  display: none;
+}
+
+/* line 51, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+label {
+  display: none;
+}
+
+/* line 55, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.tab-wrapper {
+  background-color: #1f1f1f;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  min-width: 150px;
+}
+
+/* line 63, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.editor {
+  resize: both;
+  overflow: auto;
+}
+
+/* line 68, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.ace-gutter {
+  background-color: #1d1f20;
+}
+
+/* line 72, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.search {
+  width: 100%;
+  background-color: #171717;
+  border: none;
+  color: #bdc3c7;
+  background-image: url("search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom: 5px solid #333333;
+}
+
+/* line 82, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.search:focus {
+  background-image: none;
+}
+
+/* line 86, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.folder,
+a.link {
+  font: 1em "Source Sans Pro", sans-serif;
+}
+
+/* line 91, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.file:hover {
+  width: 100%;
+  background-color: #131313;
+}
+
+/* line 95, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.traversal {
+  z-index: 2;
+}
+
+/* line 98, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.pannels {
+  background-color: #141414;
+}
+
+/* line 101, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#res-tab {
+  display: none;
+  width: 100%;
+  border: none;
+  background-color: #1d1f20;
+  height: 5%;
+  color: #bdc3c7;
+}
+
+/* line 110, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.file-actions {
+  background-color: #1a1c1d;
+  display: none;
+  text-align: right;
+}
+
+/* line 115, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.compile {
+  text-decoration: none;
+  color: #bdc3c7;
+  background-color: #2f3031;
+  padding: 5px;
+}
+
+/* line 121, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.save-button {
+  background-color: #2f3031;
+  color: #bdc3c7;
+  border-style: none;
+  padding: 5px;
+}
+
+/* line 128, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.root-text {
+  color: #3f4748;
+  margin: 0.5em;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+}
+
+/* line 134, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.menu-wrapper {
+  background-color: #141414;
+}
+
+/* line 137, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#menu-list {
+  height: 3em;
+  width: 3em;
+  border: none;
+  background-color: #141414;
+  background-image: url("menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 146, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.heading-text {
+  color: #fff;
+  font-family: "Lato", sans-serif;
+}
+
+/* line 150, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.explore-text {
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 2em;
+}
+
+/* line 155, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.main-wrapper {
+  width: 80%;
+  margin-left: 5em;
+  height: 90%;
+}
+
+/* line 160, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.repo-wrapper {
+  height: 5%;
+  background: #282828;
+  padding: 2em;
+  margin: 1em;
+  border: 3px solid #bdc3c7;
+}
+
+/* line 168, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.filename {
+  color: #bdc3c7;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+/* line 174, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.home-menu {
+  color: #bdc3c7;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+}
+
+/* line 180, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.heading-upload {
+  color: #fff;
+  font-size: 2em;
+  font-style: "Lato", sans-serif;
+}
+
+/* line 185, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#repository_upload {
+  width: 50%;
+  background-color: #282828;
+  color: #bdc3c7;
+  font-size: 1em;
+}
+
+/* line 191, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.fac, .vac {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-size: 30px;
+}
+
+/* line 196, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.vac {
+  color: #fff;
+}
+
+/* line 200, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+#user_email, #user_password, .submit-button {
+  width: 95%;
+  font-size: 18px;
+  height: 2em;
+  border: none;
+  text-indent: 1em;
+  border-radius: 0.5em;
+  border: 1px solid #bdc3c7;
+}
+
+/* line 209, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.upload-submit {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  width: 12%;
+  font-size: 1.2em;
+  height: 2em;
+}
+
+/* line 217, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.github-image {
+  width: 60%;
+  height: 60%;
+}
+
+/* line 221, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.remember-me {
+  display: inline-block;
+  font-size: 1em;
+}
+
+/* line 226, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.check-remember {
+  zoom: 1.5;
+  margin-top: 1em;
+}
+
+/* line 231, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.hub {
+  background-color: #fff;
+  color: #191919;
+}
+
+/* line 235, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.shared-link {
+  color: #191919;
+}
+
+/* line 238, /home/sifat/EditHub/app/assets/stylesheets/base/_atom.scss */
+.github-button {
+  width: 29%;
+  margin: 2em;
+  padding: 1em;
+  font-size: 1em;
+  border: none;
+  border: 2px solid #ccc;
+  background-color: #191919;
+  color: #bdc3c7;
+}
+
+/* line 3, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* line 11, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+header {
+  width: 100%;
+  height: 10%;
+  background-color: #000;
+  box-sizing: border-box;
+  border-bottom: 0.5em solid #343436;
+}
+
+/* line 19, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.traverse {
+  margin: 0.5em;
+}
+
+/* line 22, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.root-wrapper {
+  border-bottom: 3px solid #333;
+}
+
+/* line 25, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.traversal {
+  width: 25%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  border-right: 1em solid #303030;
+  background-color: #282828;
+  overflow: auto;
+}
+
+/* line 35, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.pannels {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 40, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.editor {
+  width: 100%;
+  height: 70%;
+}
+
+/* line 45, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.wrapper {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+
+/* line 51, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.tab-wrapper {
+  margin: 0;
+}
+
+/* line 55, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.search {
+  width: 99%;
+  height: 2em;
+}
+
+@media screen and (max-width: 44em) {
+  /* line 60, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+  .pannels {
+    min-width: 100%;
+  }
+}
+/* line 64, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.body-box {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 68, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box {
+  box-shadow: inset 1em 1em 2em 0.5em #000;
+  display: flex;
+}
+/* line 71, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .landing-content {
+  width: 50%;
+}
+/* line 74, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .login-wrapper {
+  align-self: center;
+  width: 60%;
+}
+/* line 77, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .login-wrapper .wrapper-content {
+  box-shadow: 1.5em 1em 1em #000;
+  border: 2px solid #fff;
+  width: 40%;
+  padding: 40px;
+  background-color: #ccc;
+  border-radius: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 86, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.login-box .login-wrapper .wrapper-content .wrapper-box {
+  text-align: center;
+}
+
+/* line 92, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.upload-box {
+  width: 100%;
+  height: 90%;
+  background-color: #141414;
+}
+
+/* line 97, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper {
+  width: 100%;
+  height: 90%;
+  background-color: #141414;
+}
+/* line 101, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper h1 {
+  margin: 0;
+}
+/* line 104, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box {
+  width: 50%;
+  height: 50%;
+  color: #bdc3c7;
+  font-family: "Lato", sans-serif;
+  padding: 2%;
+}
+/* line 110, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box .new_gitrepo {
+  margin-top: 1em;
+  width: 100%;
+  height: 100%;
+}
+/* line 114, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box .new_gitrepo .url-field {
+  width: 40%;
+  height: 10%;
+  text-indent: 10px;
+}
+/* line 119, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+.git-wrapper .git-box .new_gitrepo .url-submit {
+  width: 30%;
+  height: 12%;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+}
+
+@media screen and (max-width: 55em) {
+  /* line 132, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+  .login-box {
+    flex-direction: column;
+    display: contents;
+  }
+  /* line 135, /home/sifat/EditHub/app/assets/stylesheets/base/_template.scss */
+  .login-box .landing-content, .login-box .login-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* line 4, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.traversal ul a,
+.traversal ul li {
+  color: #bdc3c7;
+}
+/* line 9, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.traversal ul .list {
+  display: none;
+}
+
+/* line 16, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs {
+  height: 5%;
+  display: flex;
+  list-style: none;
+}
+/* line 21, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/* line 26, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li .tab-wrapper {
+  background-color: #1f1f1f;
+  border-top: 1px solid #0b2833;
+}
+/* line 33, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li.current {
+  z-index: 2;
+}
+/* line 35, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs li.current .tab-wrapper {
+  background-color: #171717;
+  border-top: 1px solid #7e6800;
+}
+/* line 41, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels .editor-wrapper {
+  height: 95%;
+  width: 100%;
+}
+/* line 44, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels .editor-wrapper .file-actions {
+  height: 5%;
+}
+/* line 49, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor {
+  height: inherit;
+  width: 100%;
+  list-style: none;
+  display: flex;
+}
+/* line 55, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li {
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 1;
+}
+/* line 61, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li .editor {
+  font: 1em monospace;
+}
+/* line 66, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li.current {
+  display: block;
+  z-index: 2;
+}
+/* line 70, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.pannels ul#tabs-editor li.current .editor {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 80, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.traversal .search-result .link {
+  display: block;
+}
+
+/* line 86, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.wrapper-upload {
+  display: flex;
+  flex-direction: row-reverse;
+}
+/* line 89, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.wrapper-upload .upload-file {
+  align-self: center;
+  width: 50%;
+}
+/* line 93, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.wrapper-upload .explore-wrapper {
+  width: 50%;
+}
+
+/* line 98, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header {
+  display: inline-flex;
+}
+/* line 100, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .heading {
+  margin-left: 2em;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 107, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .heading .heading-text {
+  font-family: "Lato", sans-serif;
+  font-size: 2em;
+}
+/* line 112, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .header-wrapper {
+  text-align: right;
+  width: 45%;
+  height: 100%;
+  margin-top: 0.3em;
+}
+/* line 117, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+header .header-wrapper a {
+  vertical-align: middle;
+}
+
+/* line 122, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.upload-file {
+  text-align: right;
+}
+/* line 124, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.upload-file .upload-button {
+  background: #27ae60;
+  padding: 0.5em;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 132, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* line 135, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper h1 {
+  margin: 0;
+}
+/* line 138, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper .upload-wrapper {
+  height: 10%;
+}
+/* line 140, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.container-wrapper .upload-wrapper .upload-input {
+  width: 14%;
+  color: #fff;
+  font-size: 1em;
+  padding: 2em;
+}
+
+/* line 148, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.body-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-size: 65%;
+}
+/* line 153, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.body-wrapper .body-color {
+  background-color: rgba(63, 71, 72, 0.9);
+  width: 100%;
+  height: 100%;
+}
+
+/* line 159, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+}
+
+/* line 168, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-wrapper .login-text {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+}
+/* line 172, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-wrapper .submit-button {
+  background-color: #2ecc71;
+  color: #fff;
+  height: 3em;
+}
+/* line 177, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.login-wrapper p {
+  margin: 0;
+}
+
+/* line 182, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content .main-intro {
+  margin: 4em;
+}
+/* line 184, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content .main-intro .heading {
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  color: #fff;
+}
+/* line 189, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content .main-intro .content {
+  border: 4px solid #fff;
+  padding: 1em;
+  background: #000;
+  border-radius: 1em;
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  color: #bdc3c7;
+}
+/* line 200, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.landing-content h1 {
+  margin-left: 1em;
+  font-family: "Raleway", sans-serif;
+  font-size: 70px;
+  color: #fff;
+  font-weight: normal;
+}
+
+/* line 209, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.main-body {
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+}
+
+/* line 214, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 220, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box {
+  width: 40%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+/* line 226, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox {
+  margin: 10%;
+}
+/* line 228, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox h2 {
+  margin: 0;
+}
+/* line 231, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox .user-email, .signup-wrapper .signup-box .signup-subox .user-password {
+  width: 95%;
+  height: 0.5em;
+  text-indent: 1em;
+}
+/* line 236, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.signup-wrapper .signup-box .signup-subox .signup-button {
+  width: 95%;
+  height: 2em;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+}
+
+/* line 247, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.user-pass-confirm {
+  width: 95%;
+  height: 2.5em;
+  text-indent: 10px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+/* line 254, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* line 257, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper .forgot-box {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 261, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper .forgot-box h2 {
+  font-family: "Lato", sans-serif;
+  color: #bdc3c7;
+}
+/* line 266, /home/sifat/EditHub/app/assets/stylesheets/base/_molecule.scss */
+.forgot-wrapper .forgot-box .action-box .forgot-submit {
+  margin-top: 1em;
+  border: none;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+/* line 2, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+.editor,
+ul#tabs {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 44em) {
+  /* line 8, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  #menu-list {
+    display: block;
+  }
+
+  /* line 11, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .traversal {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  /* line 16, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels {
+    width: 100%;
+    height: 100%;
+  }
+  /* line 19, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels #res-tab {
+    display: none;
+  }
+  /* line 23, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels #tabs li {
+    display: none;
+  }
+  /* line 26, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+  .pannels #tabs li.current {
+    display: block;
+  }
+}
+/* line 32, /home/sifat/EditHub/app/assets/stylesheets/base/_page.scss */
+.body-box {
+  background-color: #191919;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
