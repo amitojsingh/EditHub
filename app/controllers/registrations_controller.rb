@@ -5,6 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
     after_sign_in_path_for(resource)
   end
   def after_sign_in_path_for(resource)
-    repositories_new_path
+    gitrepos_newrepo_path
   end
 end
