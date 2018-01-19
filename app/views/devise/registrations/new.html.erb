@@ -8,20 +8,23 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: "user-email", placeholder: "Email" %>
+    <%= f.email_field :email,autocomplete:"off",autofocus: true, class: "user-email", placeholder: "Email",required: true %>
+    <div class=requirements>
+      Must be a valid email address
+    </div>
   </div>
 
   <div class="field">
     <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "off", class:"user-password", placeholder: "password"%>
+    <%= f.password_field :password,pattern: "(?=.*[a-z])(?=.*[A-Z]).{6,}",autocomplete: "off", class:"user-password", placeholder: "password", required: true%>
+    <div class="requirements">
+       Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.
+    </div>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class:"user-pass-confirm", placeholder: "Confirm Password"%>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"user-pass-confirm", placeholder: "Confirm Password", required: true%>
   </div>
 
   <div class="actions">

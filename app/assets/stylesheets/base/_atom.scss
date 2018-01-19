@@ -197,7 +197,7 @@ a.link {
   color:#fff;
 }
 
-#user_email,#user_password,.submit-button{
+#user_email,#user_password,#user_password_confirmation,.submit-button{
   width:95%;
   font-size:18px;
   height:2em;
@@ -244,4 +244,13 @@ a.link {
   border:2px solid #ccc;
   background-color:$medium-black;
   color:$silver;
+}
+.requirements {
+padding: 0 10px 0 10px;
+color: #999;
+max-height: 0;
+transition: 0.28s;
+overflow: hidden;
+color: #F44336;
+font-style: italic;
 }

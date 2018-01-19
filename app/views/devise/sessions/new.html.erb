@@ -17,15 +17,20 @@
                         <%=image_tag "github.png", class:"github-image"%>
                       </div>
                         <p class=login-text>Log in</p>
-                        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "login_user") do |f| %>
+                        <%= devise_error_messages! %>
                         <div class="field email-field">
                             <%= f.label :email %><br/>
-                            <%= f.email_field :email, autofocus: true, class: "user-email",placeholder: "Username" %>
+                            <%= f.email_field :email, autocomplete: "off",autofocus: true, class: "user-email",placeholder: "Username", required: true %>
+                            <div class="requirements">
+                                Must be a valid email address.
+                            </div>
                         </div>
 
                         <div class="field password-field">
                             <%= f.label :password %><br/>
-                            <%= f.password_field :password, autocomplete: "off", class: "user-password" ,placeholder: "Password"%>
+                            <%= f.password_field :password,autocomplete: "off", class: "user-password" ,placeholder: "Password", required: true%>
+
                         </div>
 
                         <% if devise_mapping.rememberable? -%>
